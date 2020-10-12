@@ -1,0 +1,36 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:sitemenus:
+      jcr:primaryType: hst:sitemenus
+      /main:
+        jcr:primaryType: hst:sitemenu
+        /home:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: root
+        /contactform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: contact
+        /antispamform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: antispam
+        /multipageform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: multipageform
+        /pluggedinform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: pluggedin
+        /allfieldsform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: allfields
+        /dynamicfieldsform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: dynamicfields
+        /afterprocessform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: afterprocessform
+        /fileuploadform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: fileuploadform
+        /dynamicregistrationform:
+          jcr:primaryType: hst:sitemenuitem
+          hst:referencesitemapitem: dynamicregistration

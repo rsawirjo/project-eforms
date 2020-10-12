@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:components/search:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.demo.components.Search
+      hst:template: search.main.content

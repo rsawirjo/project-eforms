@@ -1,0 +1,48 @@
+definitions:
+  config:
+    /hippo:namespaces/eforms/form:
+      /editor:templates:
+        /_default_:
+          /storeformdata:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.StoreFormDataPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}
+          /afterProcess:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.AfterProcessPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}
+          /counter:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.FormCounterExtensionPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}
+          /mailnotification:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.MailFormDataPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}
+          /confirmation:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.ConfirmationPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}
+          /fieldextensions:
+            /cluster.options:
+              field.extensions:
+                operation: override
+                type: string
+                value: [com.onehippo.cms7.eforms.demo.fieldextension.FieldExtensionExample,
+                  com.onehippo.cms7.eforms.demo.fieldextension.FieldExtensionSecondExample]
+          /introduction:
+            jcr:primaryType: frontend:plugin
+            mode: ${mode}
+            plugin.class: com.onehippo.cms7.eforms.cms.extensions.FormIntroductionPlugin
+            wicket.id: ${cluster.id}.extensions.item
+            wicket.model: ${wicket.model}

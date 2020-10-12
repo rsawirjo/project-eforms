@@ -1,0 +1,9 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:components/allfieldsform:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.hst.components.FormStoringEformComponent
+      hst:parameternames: [behaviors, eforms-mailsession, eforms-from-name, eforms-from-email]
+      hst:parametervalues: ['com.onehippo.cms7.eforms.hst.behaviors.FormIntroBehavior,com.onehippo.cms7.eforms.hst.behaviors.ConfirmationBehavior,com.onehippo.cms7.eforms.hst.behaviors.FormSubmissionCounterBehavior',
+        mail/Session, Webmaster, sales@example.org]
+      hst:resourcetemplate: eforms.validation.default

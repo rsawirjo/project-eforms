@@ -1,0 +1,10 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:channel:
+      jcr:primaryType: hst:channel
+      hst:channelinfoclass: com.onehippo.cms7.eforms.demo.channels.WebsiteInfo
+      hst:name: Hippo Addon Enterprise Forms Demo
+      hst:type: website
+      /hst:channelinfo:
+        jcr:primaryType: hst:channelinfo
+        headerName: Hippo Addon Enterprise Forms Demo Website

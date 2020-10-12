@@ -1,0 +1,19 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:modules/eforms:
+      /hippo:moduleconfig:
+        /eforms:validationrules:
+          /noemptyfieldsonpage:
+            jcr:primaryType: hipposys:moduleconfig
+            eforms:validationruleclass: com.onehippo.cms7.eforms.demo.validationrules.NoEmptyFieldsOnPageRule
+            eforms:validationruleforpage: true
+            eforms:validationrulelabel: No empty fields in page
+          /noemptyfieldsingroup:
+            jcr:primaryType: hipposys:moduleconfig
+            eforms:validationruleclass: com.onehippo.cms7.eforms.demo.validationrules.NoEmptyFieldsInGroupRule
+            eforms:validationruleforgroup: true
+            eforms:validationrulelabel: No empty fields in group
+          /age18plus:
+            jcr:primaryType: hipposys:moduleconfig
+            eforms:validationruleclass: com.onehippo.cms7.eforms.demo.validationrules.AgeEighteenPlusRule
+            eforms:validationrulelabel: Age 18+

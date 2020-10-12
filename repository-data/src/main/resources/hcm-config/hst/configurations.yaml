@@ -1,0 +1,7 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations:
+      /hippoaddoneformsdemo:
+        jcr:primaryType: hst:configuration
+      /hippoaddoneformsdemo-subsite-common:
+        jcr:primaryType: hst:configuration

@@ -1,0 +1,11 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:pages/allfieldspage:
+      jcr:primaryType: hst:component
+      hst:referencecomponent: hst:pages/standard
+      /main:
+        jcr:primaryType: hst:component
+        /content:
+          jcr:primaryType: hst:component
+          hst:referencecomponent: hst:components/allfieldsform
+          hst:template: eforms.default

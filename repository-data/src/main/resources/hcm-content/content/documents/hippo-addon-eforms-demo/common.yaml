@@ -1,0 +1,58 @@
+/content/documents/hippoaddoneformsdemo/common:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+  jcr:uuid: 923fd150-69a1-48e6-b22d-457fdceb10b7
+  hippo:name: Common
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: hippoaddoneformsdemo-common-id
+  hippotranslation:locale: en
+  /homepage:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: 7cda3f87-a6c6-4842-a1cb-3aa34c225206
+    hippo:name: Home Page
+    /homepage:
+      jcr:primaryType: hippoaddoneformsdemo:textdocument
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: b7b1711d-11b8-499b-b0fe-3afedfaa933b
+      hippo:availability: [live, preview]
+      hippoaddoneformsdemo:summary: This is the home page of the Hippo Enterprise
+        Forms Demo.
+      hippoaddoneformsdemo:title: Hippo Enterprise Forms Demo
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2010-01-21T12:34:11.055+02:00
+      hippostdpubwf:lastModificationDate: 2010-01-22T12:34:11.055+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-02-15T14:58:39.642Z
+      hippotranslation:id: hippoaddoneformsdemo-common-homepage-id
+      hippotranslation:locale: en
+      /hippoaddoneformsdemo:body:
+        jcr:primaryType: hippostd:html
+        hippostd:content: <p>Welcome to Hippo Enterprise Forms Demo Website!</p>
+  /about-us:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: b6a340c7-2e16-4df7-aebd-22dad723e751
+    hippo:name: About Us
+    /about-us:
+      jcr:primaryType: hippoaddoneformsdemo:textdocument
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: f243132c-c914-4332-8de9-198c019000d6
+      hippo:availability: [live, preview]
+      hippoaddoneformsdemo:summary: Who we are.
+      hippoaddoneformsdemo:title: About us
+      hippostd:holder: admin
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2010-01-21T12:34:11.055+02:00
+      hippostdpubwf:lastModificationDate: 2010-01-22T12:34:11.055+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2011-02-15T14:58:39.642Z
+      hippotranslation:id: hippoaddoneformsdemo-common-about-us-id
+      hippotranslation:locale: en
+      /hippoaddoneformsdemo:body:
+        jcr:primaryType: hippostd:html
+        hippostd:content: We are Hippo! Come and visit us at <a href="http://www.onehippo.com"
+          title="Hippo website">www.onehippo.com</a>!

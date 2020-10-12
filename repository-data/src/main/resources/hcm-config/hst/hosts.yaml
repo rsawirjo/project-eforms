@@ -1,0 +1,12 @@
+definitions:
+  config:
+    /hst:hst/hst:hosts:
+      /dev-localhost:
+        jcr:primaryType: hst:virtualhostgroup
+        hst:defaultport: 8080
+        /localhost:
+          jcr:primaryType: hst:virtualhost
+          /hst:root:
+            jcr:primaryType: hst:mount
+            hst:mountpoint: /hst:hst/hst:sites/hippoaddoneformsdemo
+            hst:pagemodelapi: resourceapi

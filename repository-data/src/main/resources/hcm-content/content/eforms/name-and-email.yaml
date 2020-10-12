@@ -1,0 +1,69 @@
+/content/eforms/templates/fieldgroups/name-and-email:
+  jcr:primaryType: eforms:reusablefieldgroup
+  jcr:uuid: 6f26eaac-e40d-4982-9db8-3c9b5a253faa
+  eforms:fieldnameprefix: name-and-email
+  eforms:groupname: Name and E-mail
+  eforms:label: group_label
+  eforms:mandatory: false
+  eforms:oneline: true
+  eforms:validationhelper: true
+  /field0:
+    jcr:primaryType: eforms:textfield
+    jcr:uuid: 4687404a-542a-43a2-b8d6-0a3277d1f1f0
+    eforms:conditional: false
+    eforms:conditionnegate: false
+    eforms:fieldid: id9fecb27799b4ab52
+    eforms:fieldname: name
+    eforms:hint: Your name
+    eforms:label: Name
+    eforms:length: 40
+    eforms:mandatory: true
+    eforms:maxlength: 10
+    eforms:validcasesensitive: 'false'
+    eforms:validexpression: ''
+  /field1:
+    jcr:primaryType: eforms:textfield
+    jcr:uuid: 804800a5-7099-45c3-8d5f-cd61cff47613
+    eforms:conditional: false
+    eforms:conditionnegate: false
+    eforms:fieldid: id9472268437944c5c
+    eforms:fieldname: email
+    eforms:hint: Your e-mail address
+    eforms:label: E-mail
+    eforms:length: 40
+    eforms:mandatory: true
+    eforms:maxlength: 40
+    eforms:validationruleid: email
+    eforms:validationrulelabel: E-mail Address
+    eforms:validcasesensitive: 'false'
+    eforms:validexpression: \b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b
+  /field3:
+    jcr:primaryType: eforms:datefield
+    jcr:uuid: 4381ba8b-7807-4538-ad78-103d02c12948
+    eforms:conditional: false
+    eforms:conditionnegate: false
+    eforms:dateformat: MM/dd/yyyy
+    eforms:fieldid: idbd74b96c07ccae54
+    eforms:fieldname: dob
+    eforms:hint: Your date of birth
+    eforms:label: Date of birth
+    eforms:mandatory: false
+    eforms:validcasesensitive: 'false'
+    eforms:validexpression: ''
+  /field2:
+    jcr:primaryType: eforms:radiogroup
+    jcr:uuid: 9c26c811-2f13-4c2c-9b19-81d1463bc4c7
+    eforms:allowother: false
+    eforms:conditional: false
+    eforms:conditionnegate: false
+    eforms:displayvalues: [Male, Female]
+    eforms:expandhint: false
+    eforms:fieldid: id96b41b906a8e6721
+    eforms:fieldname: gender
+    eforms:hint: Your gender
+    eforms:label: ''
+    eforms:length: 40
+    eforms:mandatory: false
+    eforms:validcasesensitive: 'false'
+    eforms:validexpression: ''
+    eforms:values: [male, female]

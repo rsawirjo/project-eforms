@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo-subsite-common/hst:components/leftmenu:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.demo.components.LeftMenu
+      hst:template: subsite.standard.main.leftmenu

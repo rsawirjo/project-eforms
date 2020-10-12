@@ -1,0 +1,8 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:components/afterprocessform:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.demo.components.AfterProcessEformComponent
+      hst:parameternames: [behaviors]
+      hst:parametervalues: [com.onehippo.cms7.eforms.hst.behaviors.AfterProcessBehavior]
+      hst:resourcetemplate: eforms.validation.default

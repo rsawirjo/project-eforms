@@ -1,0 +1,8 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:components/dynamicfieldsform:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.demo.components.DynamicFieldsEformComponent
+      hst:parameternames: []
+      hst:parametervalues: []
+      hst:resourcetemplate: eforms.validation.default

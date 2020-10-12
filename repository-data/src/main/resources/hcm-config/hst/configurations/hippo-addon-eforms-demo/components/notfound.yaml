@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:components/notfound:
+      jcr:primaryType: hst:component
+      hst:componentclassname: com.onehippo.cms7.eforms.demo.components.NotFound
+      hst:template: notfound.main.content

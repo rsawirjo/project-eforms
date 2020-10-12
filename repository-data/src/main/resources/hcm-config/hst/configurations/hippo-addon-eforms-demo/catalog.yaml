@@ -1,0 +1,15 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:catalog:
+      jcr:primaryType: hst:catalog
+      /hippoaddoneformsdemo-catalog:
+        jcr:primaryType: hst:containeritempackage
+        /list:
+          jcr:primaryType: hst:containeritemcomponent
+          hst:componentclassname: com.onehippo.cms7.eforms.demo.components.ListView
+          hst:iconpath: images/catalog-list.png
+          hst:label: List
+          hst:parameternames: [title, pageSize, sortBy]
+          hst:parametervalues: [List, '3', 'hippoaddoneformsdemo:date']
+          hst:template: standard.main.list
+          hst:xtype: HST.Item

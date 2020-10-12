@@ -1,0 +1,182 @@
+/hst:sitemap:
+  jcr:primaryType: hst:sitemap
+  jcr:uuid: 903c938c-84e1-44e7-9465-9a10b0baa20e
+  /root:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: cf94f165-a30c-49a1-b453-b8118f01b616
+    hst:componentconfigurationid: hst:pages/homepage
+    hst:pagetitle: Home Page
+    hst:refId: root
+  /_any_:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 1c623d08-df8a-49e6-9744-414648b0c997
+    hst:componentconfigurationid: hst:pages/pagenotfound
+  /pagenotfound:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: b1413415-152a-45a6-9068-6e5ef2cac9c4
+    hst:componentconfigurationid: hst:pages/pagenotfound
+    hst:pagetitle: Not Found Page
+    hst:refId: pagenotfound
+  /blog:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 1363de0c-f9a2-41f2-bf51-6b5ba82a8eff
+    hst:componentconfigurationid: hst:pages/bloglist
+    hst:pagetitle: List of Blog Posts
+    hst:refId: blog-list
+    hst:relativecontentpath: blog
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: d28a762c-389b-4824-9dc0-5918995806ae
+      hst:componentconfigurationid: hst:pages/blogpage
+      hst:relativecontentpath: ${parent}/${1}
+    /_any_:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: e804cb23-c0e0-4b21-89ac-7b076b146a19
+      hst:componentconfigurationid: hst:pages/bloglist
+      hst:relativecontentpath: ${parent}/${1}
+    /facet:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 5891ca77-b851-437d-b0c3-5483c9a55783
+      hst:componentconfigurationid: hst:pages/bloglist
+      hst:pagetitle: Faceted List of Blog Posts
+      hst:relativecontentpath: blogFacets
+      /_default_.html:
+        jcr:primaryType: hst:sitemapitem
+        jcr:uuid: 93d9e812-b3e0-4ac4-8c6b-6cbb84126f62
+        hst:componentconfigurationid: hst:pages/blogpage
+        hst:relativecontentpath: ${parent}/hippo:resultset/${1}
+      /_any_:
+        jcr:primaryType: hst:sitemapitem
+        jcr:uuid: dcc78f51-aba4-4fa7-abae-2624e92a3c8c
+        hst:componentconfigurationid: hst:pages/bloglist
+        hst:relativecontentpath: ${parent}/${1}
+  /events:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: d81a54f5-2e96-4528-8020-feec14acaf2e
+    hst:componentconfigurationid: hst:pages/eventslist
+    hst:pagetitle: List of Events
+    hst:relativecontentpath: events
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: ee23cba6-2cf0-4ea9-9f56-f44ece7257c4
+      hst:componentconfigurationid: hst:pages/eventspage
+      hst:relativecontentpath: ${parent}/${1}
+    /_any_:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: b77639c5-4318-4dec-a8db-1adbdd6d061e
+      hst:componentconfigurationid: hst:pages/eventslist
+      hst:relativecontentpath: ${parent}/${1}
+  /news:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: d378dfdd-2076-4776-a45a-0a217f4385aa
+    hst:componentconfigurationid: hst:pages/newslist
+    hst:pagetitle: List of News Items
+    hst:relativecontentpath: news
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: d15d4d5d-8243-4a89-b0c7-88bd70765409
+      hst:componentconfigurationid: hst:pages/newspage
+      hst:relativecontentpath: ${parent}/${1}
+    /_any_:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 2b666157-9035-4f20-9a8b-16e860a18e81
+      hst:componentconfigurationid: hst:pages/newslist
+      hst:relativecontentpath: ${parent}/${1}
+  /robots.txt:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 07df38b0-ec55-4e6c-87ed-dba2d75697c4
+    hst:componentconfigurationid: hst:pages/robotstxt
+    hst:hiddeninchannelmanager: true
+    hst:relativecontentpath: ../administration/robots
+  /search:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: ce3299b4-ada6-464c-8f5a-7502bb6af131
+    hst:componentconfigurationid: hst:pages/search
+    hst:pagetitle: Search Results
+    hst:refId: search
+  /content:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 55d0f970-1308-4526-a7e7-97e43c2f8389
+    hst:componentconfigurationid: hst:pages/contentlist
+    hst:pagetitle: List of Simple Documents
+    hst:relativecontentpath: content
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 342d1c18-cf0f-4e34-b1ed-e5c602d89429
+      hst:componentconfigurationid: hst:pages/contentpage
+      hst:relativecontentpath: ${parent}/${1}
+    /_any_:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 16be535a-21b4-4174-a459-d42ce45371e6
+      hst:componentconfigurationid: hst:pages/contentlist
+      hst:relativecontentpath: ${parent}/${1}
+  /faq:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: d55534df-55dc-4ea1-bec3-a5825b506c25
+    hst:componentconfigurationid: hst:pages/faqlist
+    hst:pagetitle: List of FAQ's
+    hst:relativecontentpath: faq
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 470021b1-aa5e-40ad-8b35-863ca90a1584
+      hst:componentconfigurationid: hst:pages/faqpage
+      hst:relativecontentpath: ${parent}/${1}
+    /_default_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: 993e8392-f81a-4b29-b2a3-f453ce9735d7
+      hst:componentconfigurationid: hst:pages/faqlist
+      hst:relativecontentpath: ${parent}/${1}
+  /landingpages:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 9d5769af-f46e-4030-9fd2-805d355bb640
+    hst:hiddeninchannelmanager: true
+    hst:relativecontentpath: landing-pages
+    /_any_.html:
+      jcr:primaryType: hst:sitemapitem
+      jcr:uuid: e8afffa7-5550-4dca-a900-f4fcb27924e2
+      hst:relativecontentpath: ${parent}/${1}
+  /contact:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 0cbcf950-e0de-4c04-a01f-66e04b4ffc2c
+    hst:componentconfigurationid: hst:pages/contactpage
+    hst:relativecontentpath: forms/contact-form
+  /antispam:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 9350da81-ad34-4ca3-8218-b1303777dd31
+    hst:componentconfigurationid: hst:pages/contactpage
+    hst:relativecontentpath: forms/anti-spam-form
+  /multipageform:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: b6f12403-a45b-482e-84c5-b2adc9c0dfff
+    hst:componentconfigurationid: hst:pages/multipageform
+    hst:relativecontentpath: forms/multi-page-form
+  /pluggedin:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: e5aee166-925f-4a93-a06b-2fdb1e201b11
+    hst:componentconfigurationid: hst:pages/pluggedinpage
+    hst:relativecontentpath: forms/pluggedin-form
+  /allfields:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 3ec24532-c2b9-40d4-8966-a138f0512017
+    hst:componentconfigurationid: hst:pages/allfieldspage
+    hst:relativecontentpath: forms/all-fields-form
+  /dynamicfields:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 28e977a2-153e-41fd-b54c-dfcaeeecfcbe
+    hst:componentconfigurationid: hst:pages/dynamicfieldspage
+    hst:relativecontentpath: forms/dynamic-field-form
+  /afterprocessform:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: fc4cb58d-a786-4667-9f12-47e99d853880
+    hst:componentconfigurationid: hst:pages/afterprocessform
+    hst:relativecontentpath: forms/after-process-form
+  /fileuploadform:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: 5e23f665-f0f4-460f-ae68-34b436b5eb0e
+    hst:componentconfigurationid: hst:pages/afterprocessform
+    hst:relativecontentpath: forms/file-upload-from
+  /dynamicregistration:
+    jcr:primaryType: hst:sitemapitem
+    jcr:uuid: d23cd5c7-018b-41f8-ac60-549616f2495f
+    hst:componentconfigurationid: hst:pages/dynamicregistrationpage
+    hst:relativecontentpath: forms/dynamic-registration-form

@@ -1,0 +1,5 @@
+group:
+  name: hippo-cms-test
+  after: hippo-cms
+project: hippo-addon-eforms
+module: hippo-addon-eforms-demo-bootstrap-configuration

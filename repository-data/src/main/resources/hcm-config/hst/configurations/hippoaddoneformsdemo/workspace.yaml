@@ -1,0 +1,12 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:workspace:
+      jcr:primaryType: hst:workspace
+      /hst:containers:
+        jcr:primaryType: hst:containercomponentfolder
+        /homepage:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            jcr:primaryType: hst:containercomponent
+            hst:label: Home Page Main
+            hst:xtype: hst.vbox
