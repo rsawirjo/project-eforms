@@ -1,0 +1,154 @@
+definitions:
+  config:
+    /hippo:namespaces/hippoaddoneformsdemo/sbicoderow:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: [ 'editor:editable', 'mix:referenceable' ]
+      jcr:uuid: 2fd19d76-c000-4d4a-a068-896d62be915a
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: [ 'mix:referenceable' ]
+        jcr:uuid: 4b25584e-3724-4e3e-9398-1ca17f44f1ac
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: [ 'hipposysedit:remodel', 'mix:referenceable' ]
+          jcr:uuid: dd88e9e7-f0b7-4eb4-9fcf-5ec4a7d711ee
+          hipposysedit:node: true
+          hipposysedit:supertype: [ 'hippo:compound', 'hippostd:relaxed' ]
+          hipposysedit:uri: http://www.onehippo.org/hippoaddoneformsdemo/nt/1.0
+          /sbi:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:sbi
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /description:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:description
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /zzppackage:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:zzppackage
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /premieextax:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:premieextax
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /bik:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:bik
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /price:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:price
+            hipposysedit:primary: false
+            hipposysedit:type: String
+          /premieinctax:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:premieinctax
+            hipposysedit:primary: false
+            hipposysedit:type: String
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+          hippoaddoneformsdemo:bik: ''
+          hippoaddoneformsdemo:description: ''
+          hippoaddoneformsdemo:premieextax: ''
+          hippoaddoneformsdemo:premieinctax: ''
+          hippoaddoneformsdemo:price: ''
+          hippoaddoneformsdemo:sbi: ''
+          hippoaddoneformsdemo:zzppackage: ''
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [ mode ]
+          frontend:references: [ wicket.model, model.compareTo, engine, validator.id ]
+          frontend:services: [ wicket.id, validator.id ]
+          /root:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.field
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+            wicket.variant: row
+          /sbi:
+            jcr:primaryType: frontend:plugin
+            caption: SBI-ADN
+            field: sbi
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /bik:
+            jcr:primaryType: frontend:plugin
+            caption: BIK
+            field: bik
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /description:
+            jcr:primaryType: frontend:plugin
+            caption: Omschrijving
+            field: description
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /price:
+            jcr:primaryType: frontend:plugin
+            caption: Prijs
+            field: price
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /zzppackage:
+            jcr:primaryType: frontend:plugin
+            caption: ZZP pakket
+            field: zzppackage
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /premieextax:
+            jcr:primaryType: frontend:plugin
+            caption: Premie excl ass.belast.
+            field: premieextax
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /premieinctax:
+            jcr:primaryType: frontend:plugin
+            caption: Premie incl. ass.belast.
+            field: premieinctax
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig

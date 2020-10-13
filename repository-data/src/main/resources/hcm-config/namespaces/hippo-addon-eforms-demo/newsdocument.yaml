@@ -3,15 +3,18 @@ definitions:
     /hippo:namespaces/hippoaddoneformsdemo/newsdocument:
       jcr:primaryType: hipposysedit:templatetype
       jcr:mixinTypes: ['mix:referenceable', 'editor:editable']
+      jcr:uuid: c1320c98-89dc-4edb-b303-0b3f006da02e
       /hipposysedit:nodetype:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: e3451cae-1481-4c71-9aa4-6a2fdf4b4771
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
           hipposysedit:node: true
           hipposysedit:supertype: ['hippoaddoneformsdemo:basedocument', 'hippostd:relaxed']
           hipposysedit:uri: http://www.onehippo.org/hippoaddoneformsdemo/nt/1.0
+          jcr:uuid: 7946d12d-74a8-4671-8578-6f49dee09f75
           /title:
             jcr:primaryType: hipposysedit:field
             hipposysedit:mandatory: false
@@ -68,6 +71,7 @@ definitions:
           hippostdpubwf:lastModifiedBy: admin
           hippotranslation:id: hippoaddoneformsdemo-newsdocument-prototype-id
           hippotranslation:locale: en
+          jcr:uuid: 5d5b4b1b-1584-449c-8467-51e4ebcd9500
           /hippoaddoneformsdemo:body:
             jcr:primaryType: hippostd:html
             hippostd:content: <html><body/></html>

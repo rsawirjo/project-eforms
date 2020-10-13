@@ -3,3 +3,4 @@ definitions:
     /hippo:namespaces/hippoaddoneformsdemo:
       jcr:primaryType: hipposysedit:namespace
       jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 2856be00-dccb-4bd0-bb06-f0047780deaa

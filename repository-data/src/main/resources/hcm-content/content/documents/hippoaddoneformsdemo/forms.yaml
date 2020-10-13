@@ -1,6 +1,6 @@
 /content/documents/hippoaddoneformsdemo/forms:
   jcr:primaryType: hippostd:folder
-  jcr:mixinTypes: ['hippotranslation:translated', 'hippo:named', 'mix:referenceable']
+  jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:referenceable']
   jcr:uuid: 6f78bb13-e7ea-41cd-8c29-323221aac298
   hippo:name: Forms
   hippostd:foldertype: [new-translated-folder, new-document]
@@ -3063,35 +3063,39 @@
           eforms:validexpression: ''
   /file-upload-from:
     jcr:primaryType: hippo:handle
-    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
     jcr:uuid: 177fff83-13f7-4061-a750-089765dbff34
     hippo:name: File Upload From
+    hippo:versionHistory: cc5eb324-061f-4980-93ee-b50e585e5a12
     /file-upload-from[1]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
       jcr:uuid: d0703815-f780-4058-a5bd-20dcb81b22ff
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
-      eforms:notificationemail: test@example.com
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
       hippo:availability: [preview]
+      hippostd:retainable: false
       hippostd:state: unpublished
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2014-11-26T10:59:38.099+01:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:22:40.505-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-12T21:00:04.919+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 6e6aa900-0f98-475c-86c8-4041fa598249
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 2f07dc3d-ac55-486d-9dbf-4eeadc114ac7
+        jcr:uuid: a3ba222c-d7ec-4d9d-b0ea-e831066ae52f
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:fileupload
-          jcr:uuid: 2bc1572d-31b1-425f-b117-42a35dd89950
+          jcr:uuid: 962440fb-70c1-481d-9028-ccc07c18a2b9
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -3102,35 +3106,50 @@
           eforms:label: Select file (max 1Mb)
           eforms:length: 40
           eforms:mandatory: true
-          eforms:maxuploadsize: 1
+          eforms:maxuploadsize: 1000000
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 024225b3-ee82-4427-94ae-6e4d05e777fc
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
     /file-upload-from[2]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: a9a8c6f2-73e7-4e7c-b9e8-5b4b5565cc5d
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
-      eforms:notificationemail: test@example.com
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
       hippo:availability: []
+      hippostd:retainable: false
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2014-11-26T10:59:38.099+01:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:22:38.794-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-12T20:58:14.821+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 6e6aa900-0f98-475c-86c8-4041fa598249
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 6e161071-5314-4b89-b799-e5ea49efe888
+        jcr:uuid: a1a856a6-0dcc-4c51-8eca-a9098d088a62
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:fileupload
-          jcr:uuid: 8a7ddc7d-c0f3-42b0-931f-3b00238db63f
+          jcr:uuid: af875869-9b9d-4613-b838-c4e7aeb522f7
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -3141,36 +3160,51 @@
           eforms:label: Select file (max 1Mb)
           eforms:length: 40
           eforms:mandatory: true
-          eforms:maxuploadsize: 1
+          eforms:maxuploadsize: 1000000
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: ae52112f-431f-4dd1-b529-5c3b168843a1
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
     /file-upload-from[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 0732999d-d7c3-4c05-b13d-fb73d07ac0eb
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
-      eforms:notificationemail: test@example.com
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
       hippo:availability: [live]
+      hippostd:retainable: false
       hippostd:state: published
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2014-11-26T10:59:38.099+01:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:22:40.505-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-12T21:00:04.919+02:00
       hippostdpubwf:lastModifiedBy: admin
-      hippostdpubwf:publicationDate: 2017-02-04T00:22:42.596-05:00
+      hippostdpubwf:publicationDate: 2020-10-12T21:00:08.046+02:00
       hippotranslation:id: 6e6aa900-0f98-475c-86c8-4041fa598249
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 2c55376b-e502-4500-a89c-bf23cd0e5bd1
+        jcr:uuid: d35bce05-d463-4bc4-ad27-2c8f8d81e579
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:fileupload
-          jcr:uuid: f4774c29-313f-472d-b074-27ba281aa934
+          jcr:uuid: 861fe708-b3c0-4b5d-94ea-07bd2989599a
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -3181,9 +3215,21 @@
           eforms:label: Select file (max 1Mb)
           eforms:length: 40
           eforms:mandatory: true
-          eforms:maxuploadsize: 1
+          eforms:maxuploadsize: 1000000
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 6b0594d4-babd-4dcb-adeb-94b6421ca8d1
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
   /dynamic-registration-form:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']

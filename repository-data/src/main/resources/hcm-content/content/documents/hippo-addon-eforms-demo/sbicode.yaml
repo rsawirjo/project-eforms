@@ -1,0 +1,7 @@
+/content/documents/hippoaddoneformsdemo/sbicode-files:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+  hippo:name: Sbicode
+  hippostd:foldertype: [new-translated-folder, new-document]
+  hippotranslation:id: d277a180-a59c-4045-9054-0ca52f64b1bc
+  hippotranslation:locale: en
