@@ -1,10 +1,19 @@
 <'hippoaddoneformsdemo'='http://www.onehippo.org/hippoaddoneformsdemo/nt/1.0'>
-<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0'>
+<'hippo'='http://www.onehippo.org/jcr/hippo/nt/2.0.4'>
 <'hippostd'='http://www.onehippo.org/jcr/hippostd/nt/2.0'>
 <'hippostdpubwf'='http://www.onehippo.org/jcr/hippostdpubwf/nt/1.0'>
+<'hippotranslation'='http://www.onehippo.org/jcr/hippotranslation/nt/1.0'>
 
-[hippoaddoneformsdemo:basedocument] > hippo:document, hippostd:publishableSummary, hippostdpubwf:document orderable
+[hippoaddoneformsdemo:basedocument] > hippo:document, hippostd:publishableSummary, hippostdpubwf:document
+  orderable
+
+[hippoaddoneformsdemo:newsdocument] > hippoaddoneformsdemo:basedocument, hippostd:relaxed
+
+[hippoaddoneformsdemo:sbicodemap] > hippoaddoneformsdemo:basedocument, hippostd:relaxed, hippotranslation:translated
+  orderable
+
+[hippoaddoneformsdemo:sbicoderow] > hippo:compound, hippostd:relaxed
+  orderable
 
 [hippoaddoneformsdemo:textdocument] > hippoaddoneformsdemo:basedocument, hippostd:relaxed
 
-[hippoaddoneformsdemo:newsdocument] > hippoaddoneformsdemo:basedocument, hippostd:relaxed

@@ -1,0 +1,85 @@
+definitions:
+  config:
+    /hippo:namespaces/hippoaddoneformsdemo/sbicodemap:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['editor:editable', 'mix:referenceable']
+      jcr:uuid: 0ee6af95-9089-4440-b9fd-025fcd6459b4
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 56a1615f-0664-4780-8c69-e69f48130d4f
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
+          jcr:uuid: 5fada29d-a67c-436a-a738-bccf38661891
+          hipposysedit:node: true
+          hipposysedit:supertype: ['hippoaddoneformsdemo:basedocument', 'hippostd:relaxed',
+            'hippotranslation:translated']
+          hipposysedit:uri: http://www.onehippo.org/hippoaddoneformsdemo/nt/1.0
+          /sbicoderow:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: true
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:sbicoderow
+            hipposysedit:primary: false
+            hipposysedit:type: hippoaddoneformsdemo:sbicoderow
+          /filename:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: false
+            hipposysedit:ordered: false
+            hipposysedit:path: hippoaddoneformsdemo:filename
+            hipposysedit:primary: false
+            hipposysedit:type: String
+      /hipposysedit:prototypes:
+        jcr:primaryType: hipposysedit:prototypeset
+        /hipposysedit:prototype:
+          jcr:primaryType: hippoaddoneformsdemo:sbicodemap
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 8e2ea622-a5b1-4caf-acf7-aa7e8e44b9c7
+          hippoaddoneformsdemo:filename: ''
+          hippostd:holder: holder
+          hippostd:state: draft
+          hippostdpubwf:createdBy: ''
+          hippostdpubwf:creationDate: 2020-10-12T21:16:21.414+02:00
+          hippostdpubwf:lastModificationDate: 2020-10-12T21:16:21.410+02:00
+          hippostdpubwf:lastModifiedBy: ''
+          hippotranslation:id: document-type-locale-id
+          hippotranslation:locale: document-type-locale
+          /hippoaddoneformsdemo:sbicoderow:
+            jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+            hippoaddoneformsdemo:column1: ''
+            hippoaddoneformsdemo:column2: ''
+            hippoaddoneformsdemo:column3: ''
+            hippoaddoneformsdemo:column4: ''
+            hippoaddoneformsdemo:column5: ''
+      /editor:templates:
+        jcr:primaryType: editor:templateset
+        /_default_:
+          jcr:primaryType: frontend:plugincluster
+          frontend:properties: [mode]
+          frontend:references: [wicket.model, model.compareTo, engine, validator.id]
+          frontend:services: [wicket.id, validator.id]
+          /root:
+            jcr:primaryType: frontend:plugin
+            item: ${cluster.id}.field
+            plugin.class: org.hippoecm.frontend.service.render.ListViewPlugin
+          /filename:
+            jcr:primaryType: frontend:plugin
+            caption: Filename
+            field: filename
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.PropertyFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /sbicoderow:
+            jcr:primaryType: frontend:plugin
+            caption: sbicoderow
+            field: sbicoderow
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
+            wicket.id: ${cluster.id}.field
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig

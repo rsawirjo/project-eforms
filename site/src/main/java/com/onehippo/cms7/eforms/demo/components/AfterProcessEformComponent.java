@@ -15,33 +15,37 @@
  */
 package com.onehippo.cms7.eforms.demo.components;
 
-import com.onehippo.cms7.eforms.hst.behaviors.StoreFormDataBehavior;
-import com.onehippo.cms7.eforms.hst.components.AfterProcessComponent;
-import com.onehippo.cms7.eforms.hst.model.ErrorMessage;
-import com.onehippo.cms7.eforms.hst.model.Form;
+import java.util.Map;
+
 import org.hippoecm.hst.component.support.forms.FormMap;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 
-import java.util.Map;
+import com.onehippo.cms7.eforms.demo.behavior.SbiCodeDataBehavior;
+import com.onehippo.cms7.eforms.hst.behaviors.StoreFormDataBehavior;
+import com.onehippo.cms7.eforms.hst.components.AfterProcessComponent;
+import com.onehippo.cms7.eforms.hst.model.ErrorMessage;
+import com.onehippo.cms7.eforms.hst.model.Form;
 
 /**
- * afterProcessDemoEformComponent
+ * afterProcessDemoEformComponent.
  */
 public class AfterProcessEformComponent extends AfterProcessComponent {
 
     @Override
-    public void onValidationError(HstRequest request, HstResponse response, Form form, FormMap map, Map<String, ErrorMessage> errors) {
+    public void onValidationError(final HstRequest request, final HstResponse response,
+                                  final Form form, final FormMap map, final Map<String, ErrorMessage> errors) {
     }
 
     @Override
-    public boolean onValidationSuccess(HstRequest request, HstResponse response, Form form, FormMap map) {
+    public boolean onValidationSuccess(final HstRequest request, final HstResponse response, final Form form, final FormMap map) {
         return true;
     }
 
     @Override
-    protected void addConfiguredBehaviors(HstRequest request) {
+    protected void addConfiguredBehaviors(final HstRequest request) {
         super.addConfiguredBehaviors(request);
+        addBehavior(new SbiCodeDataBehavior());
         addBehavior(new StoreFormDataBehavior());
     }
 
