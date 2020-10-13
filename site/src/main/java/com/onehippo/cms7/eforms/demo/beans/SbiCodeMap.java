@@ -3,6 +3,7 @@
  */
 package com.onehippo.cms7.eforms.demo.beans;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -20,8 +21,9 @@ import org.slf4j.LoggerFactory;
 @Node(jcrType = "hippoaddoneformsdemo:sbicodemap")
 public class SbiCodeMap extends HippoDocument implements ContentNodeBinder {
     private static final Logger log = LoggerFactory.getLogger(SbiCodeMap.class);
+    public static final String HIPPOADDONEFORMSDEMO_SBICODEROW = "hippoaddoneformsdemo:sbicoderow";
 
-    private List<SbiCodeRow> sbiCodeRows;
+    private List<SbiCodeRow> sbiCodeRows = new ArrayList<>();
     private String filename;
 
     public void setSbiCodeRows(final List<SbiCodeRow> sbiCodeRows) {
@@ -33,7 +35,11 @@ public class SbiCodeMap extends HippoDocument implements ContentNodeBinder {
     }
 
     public List<SbiCodeRow> getSbiCodeRowList() {
-        return (sbiCodeRows.isEmpty() || sbiCodeRows == null) ? getLinkedBeans("hippoaddoneformsdemo:sbicoderow", SbiCodeRow.class) : sbiCodeRows;
+        if (sbiCodeRows.isEmpty()) {
+            return getChildBeansByName(HIPPOADDONEFORMSDEMO_SBICODEROW, SbiCodeRow.class);
+        } else {
+            return sbiCodeRows;
+        }
     }
 
     public String getFilename() {
@@ -48,9 +54,9 @@ public class SbiCodeMap extends HippoDocument implements ContentNodeBinder {
 
                 node.setPrimaryType("hippoaddoneformsdemo:sbicodemap");
 
-                List<SbiCodeRow> sbiCodeRows = sbiCodeMap.getSbiCodeRowList();
-                for (SbiCodeRow sbiCodeRow : sbiCodeRows) {
-                    javax.jcr.Node newNode = node.addNode("hippoaddoneformsdemo:sbicoderow", "hippoaddoneformsdemo:sbicoderow");
+                List<SbiCodeRow> sbiCodeRowsBind = sbiCodeMap.getSbiCodeRowList();
+                for (SbiCodeRow sbiCodeRow : sbiCodeRowsBind) {
+                    javax.jcr.Node newNode = node.addNode(HIPPOADDONEFORMSDEMO_SBICODEROW, HIPPOADDONEFORMSDEMO_SBICODEROW);
                     sbiCodeRow.bind(sbiCodeRow, newNode);
                 }
                 node.setProperty(JcrConstants.JCR_LAST_MODIFIED, Calendar.getInstance());

@@ -10,3 +10,10 @@ definitions:
             jcr:primaryType: hst:mount
             hst:mountpoint: /hst:hst/hst:sites/hippoaddoneformsdemo
             hst:pagemodelapi: resourceapi
+            /restservices:
+              .meta:residual-child-node-category: content
+              jcr:primaryType: hst:mount
+              hst:alias: restservices
+              hst:ismapped: false
+              hst:namedpipeline: JaxrsRestPlainPipeline
+              hst:types: [rest]

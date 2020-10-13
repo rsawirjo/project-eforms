@@ -1,7 +1,171 @@
 /content/documents/hippoaddoneformsdemo/sbicode-files:
   jcr:primaryType: hippostd:folder
   jcr:mixinTypes: ['hippo:named', 'hippotranslation:translated', 'mix:versionable']
+  jcr:uuid: 0592e284-0678-4c54-ac36-1d60f5624ce5
   hippo:name: Sbicode
   hippostd:foldertype: [new-translated-folder, new-document]
   hippotranslation:id: d277a180-a59c-4045-9054-0ca52f64b1bc
   hippotranslation:locale: en
+  /20200909_sbi-lijst-zzp---incentro-sjabloon.csv:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
+    jcr:uuid: 9d341082-61f0-4acb-9720-b77d3d66743a
+    hippo:name: 20200909_SBI-lijst ZZP - Incentro Sjabloon.csv
+    hippo:versionHistory: aeaf19ab-6edc-4f46-9c9f-66efcc3f28f1
+    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[1]:
+      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 1efda23a-6cc5-4fe9-98e3-56e64e8b3df3
+      hippo:availability: []
+      hippoaddoneformsdemo:filename: ''
+      hippostd:retainable: false
+      hippostd:state: draft
+      hippostdpubwf:createdBy: sitewriter
+      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-13T21:03:55.951+02:00
+      hippostdpubwf:lastModifiedBy: sitewriter
+      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippotranslation:locale: en
+      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      /hippoaddoneformsdemo:sbicoderow[1]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: ''
+        hippoaddoneformsdemo:description: ''
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: ''
+        hippoaddoneformsdemo:zzppackage: ''
+      /hippoaddoneformsdemo:sbicoderow[2]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9999999'
+        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
+          zaden
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0111-99999
+        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
+      /hippoaddoneformsdemo:sbicoderow[3]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9305030'
+        hippoaddoneformsdemo:description: Hondentrimsalon
+        hippoaddoneformsdemo:premieextax: '58.25'
+        hippoaddoneformsdemo:premieinctax: '68.02'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0162-1629
+        hippoaddoneformsdemo:zzppackage: Blue
+      /hippoaddoneformsdemo:sbicoderow[4]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '2224010'
+        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
+        hippoaddoneformsdemo:premieextax: '53.47'
+        hippoaddoneformsdemo:premieinctax: '64.05'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 1813-99999
+        hippoaddoneformsdemo:zzppackage: White
+    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[2]:
+      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
+      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+      jcr:uuid: 74a28004-e9b2-4cc5-b690-019b6507ceec
+      hippo:availability: [preview]
+      hippoaddoneformsdemo:filename: ''
+      hippostd:retainable: false
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: sitewriter
+      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-13T21:03:56.453+02:00
+      hippostdpubwf:lastModifiedBy: sitewriter
+      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippotranslation:locale: en
+      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      /hippoaddoneformsdemo:sbicoderow[1]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: ''
+        hippoaddoneformsdemo:description: ''
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: ''
+        hippoaddoneformsdemo:zzppackage: ''
+      /hippoaddoneformsdemo:sbicoderow[2]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9999999'
+        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
+          zaden
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0111-99999
+        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
+      /hippoaddoneformsdemo:sbicoderow[3]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9305030'
+        hippoaddoneformsdemo:description: Hondentrimsalon
+        hippoaddoneformsdemo:premieextax: '58.25'
+        hippoaddoneformsdemo:premieinctax: '68.02'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0162-1629
+        hippoaddoneformsdemo:zzppackage: Blue
+      /hippoaddoneformsdemo:sbicoderow[4]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '2224010'
+        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
+        hippoaddoneformsdemo:premieextax: '53.47'
+        hippoaddoneformsdemo:premieinctax: '64.05'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 1813-99999
+        hippoaddoneformsdemo:zzppackage: White
+    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[3]:
+      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 85941591-d427-41a2-816e-59cd7c81553b
+      hippo:availability: [live]
+      hippoaddoneformsdemo:filename: ''
+      hippostd:retainable: false
+      hippostd:state: published
+      hippostdpubwf:createdBy: sitewriter
+      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-13T21:03:56.453+02:00
+      hippostdpubwf:lastModifiedBy: sitewriter
+      hippostdpubwf:publicationDate: 2020-10-13T21:03:57.090+02:00
+      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippotranslation:locale: en
+      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      /hippoaddoneformsdemo:sbicoderow[1]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: ''
+        hippoaddoneformsdemo:description: ''
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: ''
+        hippoaddoneformsdemo:zzppackage: ''
+      /hippoaddoneformsdemo:sbicoderow[2]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9999999'
+        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
+          zaden
+        hippoaddoneformsdemo:premieextax: ''
+        hippoaddoneformsdemo:premieinctax: ''
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0111-99999
+        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
+      /hippoaddoneformsdemo:sbicoderow[3]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '9305030'
+        hippoaddoneformsdemo:description: Hondentrimsalon
+        hippoaddoneformsdemo:premieextax: '58.25'
+        hippoaddoneformsdemo:premieinctax: '68.02'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 0162-1629
+        hippoaddoneformsdemo:zzppackage: Blue
+      /hippoaddoneformsdemo:sbicoderow[4]:
+        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
+        hippoaddoneformsdemo:bik: '2224010'
+        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
+        hippoaddoneformsdemo:premieextax: '53.47'
+        hippoaddoneformsdemo:premieinctax: '64.05'
+        hippoaddoneformsdemo:price: ''
+        hippoaddoneformsdemo:sbi: 1813-99999
+        hippoaddoneformsdemo:zzppackage: White
