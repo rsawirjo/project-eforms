@@ -22,6 +22,11 @@
             <bean class= "com.onehippo.cms7.jaxrs.services.SbiCodeMapContentResource" />
           </constructor-arg>
         </bean>
+        <bean class= "org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
+          <constructor-arg>
+            <bean class= "com.onehippo.cms7.jaxrs.services.EnterpriseFormContentResource" />
+          </constructor-arg>
+        </bean>
       </list>
     </property>
   </bean>
