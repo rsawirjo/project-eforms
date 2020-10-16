@@ -1,17 +1,6 @@
-/*
- * Copyright 2011-2019 Hippo B.V. (http://www.onehippo.com)
- *
- */
 package com.onehippo.cms7.jaxrs.services;
 
 import java.util.Calendar;
-
-import org.apache.commons.lang.StringUtils;
-import org.hippoecm.hst.content.beans.Node;
-import org.onehippo.cms7.essentials.dashboard.annotations.HippoEssentialsGenerated;
-
-import com.onehippo.cms7.eforms.hst.beans.AbstractFieldBean;
-import com.onehippo.cms7.eforms.hst.beans.FieldType;
 
 /**
  * * [eforms:datefield] > eforms:field

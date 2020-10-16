@@ -1,7 +1,3 @@
-/*
- * Copyright 2010-2019 Hippo B.V. (http://www.onehippo.com)
- */
-
 package com.onehippo.cms7.jaxrs.services;
 
 import java.util.List;

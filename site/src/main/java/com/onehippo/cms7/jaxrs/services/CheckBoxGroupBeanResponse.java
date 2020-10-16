@@ -6,12 +6,6 @@ package com.onehippo.cms7.jaxrs.services;
 
 import java.util.List;
 
-import org.hippoecm.hst.content.beans.Node;
-import org.onehippo.cms7.essentials.dashboard.annotations.HippoEssentialsGenerated;
-
-import com.onehippo.cms7.eforms.hst.beans.AbstractFieldBean;
-import com.onehippo.cms7.eforms.hst.beans.FieldType;
-
 /**
  * [eforms:checkboxes] > eforms:field
  * - eforms:values (string) = "Choice 1" multiple autocreated
