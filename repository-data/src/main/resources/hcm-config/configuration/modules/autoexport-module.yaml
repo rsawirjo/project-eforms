@@ -6,4 +6,3 @@ definitions:
           operation: override
           type: string
           value: ['repository-data:/']
-        autoexport:enabled: false
