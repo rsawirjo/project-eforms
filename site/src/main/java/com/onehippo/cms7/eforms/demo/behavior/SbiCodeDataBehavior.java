@@ -13,6 +13,7 @@ import java.util.Map;
 
 import javax.jcr.Session;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
@@ -86,10 +87,12 @@ public class SbiCodeDataBehavior extends StoreFormDataBehavior {
             return;
         }
         StringBuilder basePath = new StringBuilder(getTempFolder());
-        basePath.append('/').append(request.getSession().getId()).append('/');
+        basePath.append('/').append(request.getSession().getId());
+        String baseTempFolder = basePath.toString();
+        basePath.append('/');
         storeTemporaryFile(data, filename, basePath);
         readTempStoredFile(basePath.toString(), filename);
-        deleteTempFile(filename);
+        deleteTempFolder(baseTempFolder);
     }
 
     protected String getTempFolder() {
@@ -128,12 +131,11 @@ public class SbiCodeDataBehavior extends StoreFormDataBehavior {
         return false;
     }
 
-    private void deleteTempFile(final String filename) {
-        File fileToDelete = new File(filename);
-        if (fileToDelete.delete()) {
-           log.debug(String.format("%s temp file has been deleted", fileToDelete.getName()));
-        } else {
-            log.debug(String.format("%s Failed to delete the temp file", fileToDelete.getName()));
+    private void deleteTempFolder(final String folderName) {
+        try {
+            FileUtils.deleteDirectory(new File(folderName));
+        } catch (IOException e) {
+            log.debug(String.format("%s Failed to delete the temp folder", folderName));
         }
     }
 
