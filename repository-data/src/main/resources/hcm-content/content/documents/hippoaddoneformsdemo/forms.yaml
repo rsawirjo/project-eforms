@@ -235,6 +235,7 @@
       eforms:confirmationtext: Thanks for your contact. Your submission was confirmed.
       eforms:formintro: This is a simple contact form.
       eforms:formname: Contact Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:submissioncountlimit: '100'
       eforms:usestoredataforcounter: 'true'
@@ -450,6 +451,7 @@
       eforms:confirmationtext: Thanks for your contact. Your submission was confirmed.
       eforms:formintro: This is a simple contact form.
       eforms:formname: Contact Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:submissioncountlimit: '100'
       eforms:usestoredataforcounter: 'true'
@@ -800,7 +802,6 @@
       eforms:actionurl: http://test.com/action.do
       eforms:confirmationemailfields: ''
       eforms:formname: Registration Form
-      eforms:notificationemail: test@example.com
       eforms:validationhelper: true
       hippo:availability: [preview]
       hippostd:state: unpublished
@@ -926,36 +927,53 @@
           eforms:mandatory: false
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: ac1e6113-7408-48ac-a47f-6b5e8c2ee118
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
     /registration-form[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 010c1043-d368-431c-9af7-83b28fa65e3d
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: woooop
       eforms:confirmationemailfields: ''
+      eforms:formintro: This is the form introduction
       eforms:formname: Registration Form
-      eforms:notificationemail: test@example.com
       eforms:validationhelper: true
       hippo:availability: []
+      hippostd:retainable: false
       hippostd:state: draft
+      hippostd:transferable: false
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-17T11:10:35.258-07:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:21:21.210-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T15:57:07.891+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 0ca18ef6-2827-4d14-93eb-457b70fd6c70
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 5ded7aa3-c1f0-4eaf-b6e1-987a32b0f551
+        jcr:uuid: 0a85bb1b-3eaf-43db-b83c-ae20906b553e
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: ' '
         eforms:label: Page 1
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 6ef94856-9b24-454d-ac97-aa25fd905259
+          jcr:uuid: a6c29bf0-1eef-46d0-9150-08a28892bbcc
+          eforms:autocomplete: ''
           eforms:conditional: false
           eforms:conditionnegate: false
+          eforms:expandhint: false
           eforms:fieldid: id9d04c4556f41d07b
           eforms:fieldname: field_name
           eforms:hint: field_hint
@@ -978,7 +996,7 @@
           eforms:validationhelper: true
           /field0:
             jcr:primaryType: eforms:textfield
-            jcr:uuid: 39c8286c-4189-4046-977d-3c633fdbc6f6
+            jcr:uuid: 4473806f-c173-4427-aa8f-58e76ad21d9d
             eforms:conditional: false
             eforms:conditionnegate: false
             eforms:fieldid: idae3a6dcaef7ccc94
@@ -991,7 +1009,7 @@
             eforms:validexpression: ''
           /field1:
             jcr:primaryType: eforms:textfield
-            jcr:uuid: f2ab78bf-8ace-40a6-92b0-84fe85cb1042
+            jcr:uuid: c9f5c29e-0f9b-4772-b43c-15f3017af1af
             eforms:conditional: false
             eforms:conditionnegate: false
             eforms:fieldid: id88a4589b48b42f6f
@@ -1004,7 +1022,7 @@
             eforms:validexpression: ''
           /field2:
             jcr:primaryType: eforms:textfield
-            jcr:uuid: 46dc9616-c7b2-46aa-8905-309b034bda58
+            jcr:uuid: 4d3dc448-b12a-411b-a8ef-f7c921b5d085
             eforms:conditional: false
             eforms:conditionnegate: false
             eforms:fieldid: id8131854f04eb3ff5
@@ -1017,7 +1035,7 @@
             eforms:validexpression: ''
         /field2:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: faa0f970-392e-4b40-88a1-9629f8fef110
+          jcr:uuid: e88ea50c-4488-4f8f-b29e-12956ab57940
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: idbe0211e47ed55276
@@ -1030,7 +1048,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: 38bb1ab9-31b1-4f49-8b7d-39c31a6f3f52
+          jcr:uuid: 4aea13b5-1402-4dfe-818f-ef84d2ea995c
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1047,7 +1065,7 @@
           eforms:values: ['yes', 'no']
         /field3:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: df4c3d86-03e4-4a05-b6d3-7d9508e7b957
+          jcr:uuid: 4b1b81b4-5589-4ea6-a4b6-fdd7d29b11d8
           eforms:conditional: false
           eforms:conditionfield: attending-lunch
           eforms:conditionnegate: false
@@ -1060,6 +1078,18 @@
           eforms:mandatory: false
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: e34d2b8d-4cbf-4c58-b422-a76f6dcc505f
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: bob.vork@incentro.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
   /anti-spam-form:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
@@ -1138,7 +1168,6 @@
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
       eforms:confirmationemailfields: ''
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
@@ -1196,6 +1225,18 @@
           eforms:mandatory: false
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: aa723d3b-c3a3-4e28-8de4-03b1d6f4c484
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
     /anti-spam-form[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
@@ -1263,41 +1304,44 @@
           eforms:validexpression: ''
   /multi-page-form:
     jcr:primaryType: hippo:handle
-    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
     jcr:uuid: 711e44c4-710f-43ae-8201-f4e95aaefbdd
     hippo:name: Multi Page Form
+    hippo:versionHistory: 27976218-d1c4-46ba-bac0-fbbcb311d75d
     /multi-page-form[1]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 83289c6e-81f6-4882-b138-58ded35bbc9a
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: wooop
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
+      eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [live]
       hippostd:holder: admin
+      hippostd:retainable: false
       hippostd:state: published
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:21:52.943-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T16:00:13.489+02:00
       hippostdpubwf:lastModifiedBy: admin
-      hippostdpubwf:publicationDate: 2017-02-04T00:21:55.378-05:00
+      hippostdpubwf:publicationDate: 2020-10-16T16:00:16.185+02:00
       hippotranslation:id: 5e2bda34-0dad-432c-a4a6-9522bf3ba185
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: f897b8c6-e633-49c1-b5fe-c3174e77f659
+        jcr:uuid: b5b50f50-dfd5-4e9d-aa52-68a64e657f7f
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: bundle-type
         eforms:label: Bundle Type
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: 58960a56-ac06-4f0f-847e-011735c697f5
+          jcr:uuid: afedbb4e-8d93-43ba-ba1e-d8310e2f6be3
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [TV + Phone, TV + Internet, TV + Phone + Internet]
@@ -1312,7 +1356,7 @@
           eforms:values: [tv_phone, tv_internet, tv_phone_internet]
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: 97aa1bdb-11bc-4472-a49a-922650efe819
+          jcr:uuid: aaae5bdc-5ca0-486e-bcd9-d3eb7121d3b3
           eforms:allowother: false
           eforms:conditional: true
           eforms:conditionfield: bundle-type
@@ -1331,7 +1375,7 @@
           eforms:values: [keep-old-number]
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: 6956ec5d-f192-48bf-baa3-62ca3a60a1ff
+        jcr:uuid: 5b81e9eb-e390-46ac-8ffb-9654b2831917
         eforms:conditional: true
         eforms:conditionfield: bundle-type
         eforms:conditionnegate: false
@@ -1340,7 +1384,7 @@
         eforms:label: 3-in-1 Rebate Option
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: 9277d0f2-13be-4fa9-a501-aa947e5034e7
+          jcr:uuid: 2c05314c-f497-4eef-86d8-648b539073d3
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1357,13 +1401,13 @@
           eforms:values: [mail-in-rebate, rebate-in-balance]
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 5410a7b6-4db2-4e2f-a285-f583d1ba9f6b
+        jcr:uuid: b1347348-3f61-4de0-bfb9-0be7f983dbef
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Contact Information
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 28eb4bfc-9fd5-47e5-a9d9-816423714394
+          jcr:uuid: b0aa9979-860a-4380-a4ec-4f5a6d04a6a7
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: ida1350f3a6ee5d467
@@ -1378,7 +1422,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 4a43a65a-0970-4f39-b806-db04f6d55b64
+          jcr:uuid: 31521303-5d06-41c4-b2ad-fdff0844040e
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9629897e0e49a73b
@@ -1389,36 +1433,50 @@
           eforms:mandatory: true
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 02dd3b1d-a39e-4016-af18-6ed97220a97f
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: bob.vork@incentro.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: form subject
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: helloo
     /multi-page-form[2]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:versionable']
       jcr:uuid: d6336d02-1577-4041-838f-63984551df41
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: wooop
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
+      eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [preview]
+      hippostd:retainable: false
       hippostd:state: unpublished
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:21:52.943-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T16:00:13.489+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 5e2bda34-0dad-432c-a4a6-9522bf3ba185
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 7cb2111e-e2bd-42f3-ad78-5c461817550f
+        jcr:uuid: a3641186-15d8-4d62-9290-2e9b5ca141c7
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: bundle-type
         eforms:label: Bundle Type
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: fa709a87-a1d3-4f2d-9053-d6319d727ded
+          jcr:uuid: f79abcea-d9a0-41b0-b3e3-657b53d12738
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [TV + Phone, TV + Internet, TV + Phone + Internet]
@@ -1433,7 +1491,7 @@
           eforms:values: [tv_phone, tv_internet, tv_phone_internet]
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: 17985614-c8f5-4216-9c07-2d472fcc5f31
+          jcr:uuid: ae015a69-3ed4-4634-a60c-6981d836403b
           eforms:allowother: false
           eforms:conditional: true
           eforms:conditionfield: bundle-type
@@ -1452,7 +1510,7 @@
           eforms:values: [keep-old-number]
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: fc14e793-4187-4bd2-8be3-6cda7e7f401f
+        jcr:uuid: d65a6a54-2dfe-4edb-8bd8-a0176ebffd5e
         eforms:conditional: true
         eforms:conditionfield: bundle-type
         eforms:conditionnegate: false
@@ -1461,7 +1519,7 @@
         eforms:label: 3-in-1 Rebate Option
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: 0943eaf8-1369-43e6-81f1-4a372775f9ca
+          jcr:uuid: 025a832f-99e0-4784-ac83-7a88e5a4323e
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1478,13 +1536,13 @@
           eforms:values: [mail-in-rebate, rebate-in-balance]
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 81efb648-d39b-49e7-b176-a5a116120cbf
+        jcr:uuid: dd9b1319-7cc5-44ca-addb-e921f5423317
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Contact Information
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: aead5faf-9138-4bf6-8bbc-9e04dd3f4499
+          jcr:uuid: 3ea55dd2-7783-4a62-ae00-b8912f61c53a
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: ida1350f3a6ee5d467
@@ -1499,7 +1557,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: f75f3171-753c-40e1-a804-2990240cb062
+          jcr:uuid: 45d967e0-4eb2-449b-9e27-b6a1efe56a81
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9629897e0e49a73b
@@ -1510,36 +1568,50 @@
           eforms:mandatory: true
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: ced98c59-0e8f-4cf2-9797-c2615a90c4ea
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: bob.vork@incentro.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: form subject
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: helloo
     /multi-page-form[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: 692e01de-1893-43d6-a3e7-95e98528bbb3
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:afterprocesssuccesstext: wooop
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
+      eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: []
+      hippostd:retainable: false
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:21:50.968-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T15:56:16.779+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 5e2bda34-0dad-432c-a4a6-9522bf3ba185
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: b21bf1d6-5c07-4c7e-878e-6bd3c5044e9b
+        jcr:uuid: 81dc89a4-c558-485c-aab6-685b5c6ab1f2
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: bundle-type
         eforms:label: Bundle Type
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: 2cb37d95-695b-460c-b82c-138d97b7af34
+          jcr:uuid: be098244-f811-47eb-937d-dc751fc3db5c
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [TV + Phone, TV + Internet, TV + Phone + Internet]
@@ -1554,7 +1626,7 @@
           eforms:values: [tv_phone, tv_internet, tv_phone_internet]
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: 8b735121-4b74-49c8-8b68-59618be77d4e
+          jcr:uuid: 2b2efdd2-a712-4870-b447-f22aacf072f6
           eforms:allowother: false
           eforms:conditional: true
           eforms:conditionfield: bundle-type
@@ -1573,7 +1645,7 @@
           eforms:values: [keep-old-number]
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: 4d53f665-b2a1-4bfd-92c8-92fa68a7b5b2
+        jcr:uuid: f70bfc24-931b-4bd2-a504-bb8ce962cb08
         eforms:conditional: true
         eforms:conditionfield: bundle-type
         eforms:conditionnegate: false
@@ -1582,7 +1654,7 @@
         eforms:label: 3-in-1 Rebate Option
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: a13a063b-2f40-43f6-b5e9-47410de9d7b7
+          jcr:uuid: 02e3d280-4963-4a4c-b3b1-b7f11b696c2c
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1599,13 +1671,13 @@
           eforms:values: [mail-in-rebate, rebate-in-balance]
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: c0dd83be-3b8e-487f-93dc-b012de5a9002
+        jcr:uuid: 2b88c9db-e7b5-4add-be38-e44ab64aab10
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Contact Information
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 053c2a18-b24d-49e5-a591-c6f547bb4b42
+          jcr:uuid: a6a83290-d1ab-4740-abb7-3727c8eec430
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: ida1350f3a6ee5d467
@@ -1620,7 +1692,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: b9b950f6-02bf-460f-bfd2-83df08829e36
+          jcr:uuid: 0cf60353-6af2-4fe3-ad49-94543efba5b6
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9629897e0e49a73b
@@ -1631,6 +1703,18 @@
           eforms:mandatory: true
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: ceebaac8-b91a-494f-aabf-caa478a84ceb
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: bob.vork@incentro.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: form subject
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: helloo
   /after-process-form:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
@@ -1757,7 +1841,6 @@
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
       eforms:formname: After Process Form
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [preview]
@@ -1852,6 +1935,18 @@
           eforms:mandatory: true
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 25bd0ddd-374f-4285-ba0c-e13a19f44384
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
     /after-process-form[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
@@ -1864,14 +1959,14 @@
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
       eforms:formname: After Process Form
-      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: []
+      hippostd:holder: admin
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
-      hippostdpubwf:lastModificationDate: 2017-02-04T00:22:01.142-05:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T15:56:09.276+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 5e2bda34-0dad-432c-a4a6-9522bf3ba185
       hippotranslation:locale: en
@@ -1879,14 +1974,14 @@
         jcr:primaryType: hippotranslation:translations
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: eb0660ec-6d36-4269-a2fe-0e1c958cd88e
+        jcr:uuid: 272e613d-2eaa-48b9-a7ea-4dac7d4e7a1a
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: bundle-type
         eforms:label: Bundle Type
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: cd3ff459-a9d7-4fe4-974b-0d1f7f3a711b
+          jcr:uuid: 550e803d-a05d-4f3f-8ce2-07cfd7512d73
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [TV + Phone, TV + Internet, TV + Phone + Internet]
@@ -1901,7 +1996,7 @@
           eforms:values: [tv_phone, tv_internet, tv_phone_internet]
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: a89f30f4-fa01-4636-895d-48c0a4653a2e
+        jcr:uuid: ac0a018b-7735-4538-8c6b-8bbad2ebac60
         eforms:conditional: true
         eforms:conditionfield: bundle-type
         eforms:conditionnegate: false
@@ -1910,7 +2005,7 @@
         eforms:label: 3-in-1 Rebate Option
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: dcb2ea9b-f29e-49c1-b4f7-515bb222c480
+          jcr:uuid: 180b4af1-c72a-410e-87c1-a89345de1ab6
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1926,13 +2021,13 @@
           eforms:values: [mail-in-rebate, rebate-in-balance]
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 6e1b130b-3980-41e5-a5eb-8797b3bd89bb
+        jcr:uuid: 644581fb-68bd-4a3f-9585-662ce7332a24
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Contact Information
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: bbf01a99-bffa-4fba-8bf5-f57666f0d58d
+          jcr:uuid: 19f25a48-1dab-4d82-901a-6a72a20d1fb4
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -1948,7 +2043,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 321fa03f-05c7-4404-b0c8-a9b6a0584f5b
+          jcr:uuid: d94782f0-5c3a-4020-adba-c744366f4a8e
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9629897e0e49a73b
@@ -1959,6 +2054,18 @@
           eforms:mandatory: true
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 177f2039-ca75-45c3-9c1d-a8745d9ca439
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
   /pluggedin-form:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
@@ -2083,11 +2190,6 @@
       eforms:formintro: Enterprise Form Bar Camp is an annual event you can join in
         for free!
       eforms:formname: Example Plugged-in Form
-      eforms:mailformdata: 'false'
-      eforms:notificationemail: admin@example.com
-      eforms:notificationreplytoemailfields: ''
-      eforms:notificationsubject: Request notification
-      eforms:notificationtext: User request notification to administrators
       eforms:storeformdata: 'true'
       eforms:submissioncountlimit: '10'
       eforms:submissioncountlimittext: Sorry, join request count exceeds the maximum.
@@ -2164,6 +2266,18 @@
           eforms:label: How many employees in your organization?
           eforms:mandatory: false
           eforms:values: ['50', '100', '500', '1000', '10000']
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 3355fc61-5049-498b-97cd-5b3d61752f4d
+        eforms:addattachments: 'true'
+        eforms:mailformdata: 'false'
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: admin@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: Request notification
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: User request notification to administrators
     /pluggedin-form[3]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
@@ -3092,6 +3206,7 @@
       eforms:actionurl: http://test.com/action.do
       eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
@@ -3146,6 +3261,7 @@
       eforms:actionurl: http://test.com/action.do
       eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
@@ -3200,6 +3316,7 @@
       eforms:actionurl: http://test.com/action.do
       eforms:afterprocesssuccesstext: Bedankt voor het uploaden van het bestand
       eforms:confirmationemailfields: ''
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
@@ -3454,3 +3571,58 @@
             eforms:validationrulelabel: E-mail Address
             eforms:validcasesensitive: 'false'
             eforms:validexpression: \b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b
+  /zzp-form:
+    jcr:primaryType: hippo:handle
+    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:uuid: 8cf3de0c-7432-42a9-88e0-56d36db1393f
+    hippo:name: ZZP form
+    /zzp-form:
+      jcr:primaryType: eforms:form
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: f737066c-d808-4ce7-b2a7-1ec6c7e43ffb
+      eforms:action: mail
+      eforms:actionurl: http://test.com/action.do
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'false'
+      hippo:availability: []
+      hippostd:holder: admin
+      hippostd:state: draft
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-16T16:39:14.915+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
+      hippotranslation:locale: en
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 24ce7e59-3801-4853-9f1e-5d8b8d0b1ad5
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
+      /page0:
+        jcr:primaryType: eforms:page
+        jcr:uuid: 47220777-5c2d-4d38-8213-4a6a0758a4d1
+        eforms:conditional: false
+        eforms:conditionnegate: false
+        eforms:label: Page 1
+        /field0:
+          jcr:primaryType: eforms:dropdown
+          jcr:uuid: a75324b4-5e2c-4214-a9da-23226533c094
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:fieldid: idb30754096b1fb7af
+          eforms:fieldname: zzp_sector_picker
+          eforms:hint: ''
+          eforms:initialdisplaystring: ''
+          eforms:initialoption: value
+          eforms:initialvalue: Choice 1
+          eforms:label: Sector
+          eforms:mandatory: false
+          eforms:values: [Choice 1]

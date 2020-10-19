@@ -1,0 +1,13 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hippoaddoneformsdemo/hst:workspace/hst:containers/homepage/main/form:
+      jcr:primaryType: hst:containeritemcomponent
+      hst:componentclassname: com.onehippo.cms7.eforms.hst.components.AutoDetectFormComponent
+      hst:iconpath: resources/addon/eforms/images/icons/form.svg
+      hst:label: Enterprise Form
+      hst:parameternames: [form, eforms-from-email, eforms-from-name]
+      hst:parametervalues: [/content/documents/hippoaddoneformsdemo/forms/multi-page-form,
+        changeit@example.com, ChangeIt]
+      hst:resourcetemplate: eforms.validation.default
+      hst:template: eforms.default
+      hst:xtype: HST.Item

@@ -16,15 +16,23 @@ import org.hippoecm.hst.content.beans.standard.HippoFolderBean;
 import org.hippoecm.hst.core.request.HstRequestContext;
 import org.onehippo.cms7.essentials.components.rest.BaseRestResource;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.google.gson.Gson;
 import com.onehippo.cms7.eforms.demo.util.ContextHelper;
 import com.onehippo.cms7.eforms.hst.beans.AbstractFieldBean;
+import com.onehippo.cms7.eforms.hst.beans.AntiSpamFieldBean;
+import com.onehippo.cms7.eforms.hst.beans.CheckBoxBean;
 import com.onehippo.cms7.eforms.hst.beans.CheckBoxGroupBean;
+import com.onehippo.cms7.eforms.hst.beans.DateFieldBean;
 import com.onehippo.cms7.eforms.hst.beans.DropdownBean;
 import com.onehippo.cms7.eforms.hst.beans.FieldGroupBean;
 import com.onehippo.cms7.eforms.hst.beans.FieldType;
+import com.onehippo.cms7.eforms.hst.beans.FileuploadBean;
+import com.onehippo.cms7.eforms.hst.beans.LikertBean;
+import com.onehippo.cms7.eforms.hst.beans.MultiSelectBean;
+import com.onehippo.cms7.eforms.hst.beans.RadioBoxBean;
 import com.onehippo.cms7.eforms.hst.beans.RadioGroupBean;
+import com.onehippo.cms7.eforms.hst.beans.SelectType;
+import com.onehippo.cms7.eforms.hst.beans.SimpleTextBean;
 import com.onehippo.cms7.eforms.hst.beans.SingleSelectBean;
 import com.onehippo.cms7.eforms.hst.beans.TextAreaBean;
 import com.onehippo.cms7.eforms.hst.beans.TextFieldBean;
@@ -41,15 +49,17 @@ public class EnterpriseFormContentResource extends BaseRestResource {
     public String getAbstractFieldBean(
             @PathParam("uuid") String uuid,
             @Context HttpServletRequest servletRequest,
-            @Context HttpServletResponse servletResponse) throws JsonProcessingException {
+            @Context HttpServletResponse servletResponse) {
         AbstractFieldBean abstractFieldBean;
         if (StringUtils.isNotEmpty(uuid)) {
             abstractFieldBean = getAbstractFieldBean(uuid);
-            if (abstractFieldBean != null ) {
-                Gson gson = new Gson();
+            if (abstractFieldBean != null) {
+                Gson gson = new Gson(); 
+                String type = "";
+
                 switch (abstractFieldBean.getType()) {
                     case FIELD_GROUP:
-                        FieldGroupBean fieldGroupBean = (FieldGroupBean)abstractFieldBean;
+                        FieldGroupBean fieldGroupBean = (FieldGroupBean) abstractFieldBean;
                         FieldGroupBeanResponse fieldGroupBeanResponse = new FieldGroupBeanResponse(
                                 fieldGroupBean.getName(), fieldGroupBean.isMandatory(), fieldGroupBean.getHint(),
                                 fieldGroupBean.getAutocomplete(), fieldGroupBean.isExpandHint(),
@@ -64,7 +74,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                         );
                         return gson.toJson(fieldGroupBeanResponse);
                     case TEXT_FIELD:
-                        TextFieldBean textFieldBean = (TextFieldBean)abstractFieldBean;
+                        TextFieldBean textFieldBean = (TextFieldBean) abstractFieldBean;
                         TextFieldBeanResponse textFieldBeanResponse = new TextFieldBeanResponse(
                                 textFieldBean.getName(), textFieldBean.isMandatory(), textFieldBean.getHint(),
                                 textFieldBean.getAutocomplete(), textFieldBean.isExpandHint(),
@@ -74,12 +84,25 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 textFieldBean.getExtraCssClass(), textFieldBean.isConditional(),
                                 textFieldBean.isConditionNegate(), textFieldBean.getConditionFieldName(),
                                 textFieldBean.getConditionFieldValue(),
-                                textFieldBean.getLength(), textFieldBean.getMinLength(),textFieldBean.getMaxLength(),
+                                textFieldBean.getLength(), textFieldBean.getMinLength(), textFieldBean.getMaxLength(),
                                 textFieldBean.getInitialValue(), "TEXT_FIELD"
                         );
                         return gson.toJson(textFieldBeanResponse);
+                    case SIMPLETEXTFIELD:
+                        SimpleTextBean simpleTextBean = (SimpleTextBean) abstractFieldBean;
+                        SimpleTextBeanResponse simpleTextBeanResponse = new SimpleTextBeanResponse(
+                                simpleTextBean.getName(), simpleTextBean.isMandatory(), simpleTextBean.getHint(),
+                                simpleTextBean.getAutocomplete(), simpleTextBean.isExpandHint(),
+                                simpleTextBean.getLabel(), simpleTextBean.getValidationRuleId(),
+                                simpleTextBean.getValidationRuleLabel(), simpleTextBean.getValidationRuleClass(),
+                                simpleTextBean.getRegExp(), simpleTextBean.isCaseSensitive(), simpleTextBean.getFieldClass(),
+                                simpleTextBean.getExtraCssClass(), simpleTextBean.isConditional(),
+                                simpleTextBean.isConditionNegate(), simpleTextBean.getConditionFieldName(),
+                                simpleTextBean.getConditionFieldValue(), "SIMPLETEXTFIELD"
+                        );
+                        return gson.toJson(simpleTextBeanResponse);
                     case TEXTAREA:
-                        TextAreaBean textAreaBean = (TextAreaBean)abstractFieldBean;
+                        TextAreaBean textAreaBean = (TextAreaBean) abstractFieldBean;
                         TextAreaBeanResponse textAreaBeanResponse = new TextAreaBeanResponse(
                                 textAreaBean.getName(), textAreaBean.isMandatory(), textAreaBean.getHint(),
                                 textAreaBean.getAutocomplete(), textAreaBean.isExpandHint(),
@@ -94,11 +117,42 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                         );
                         return gson.toJson(textAreaBeanResponse);
                     case SELECT:
-                        SingleSelectBean singleSelectBean = (SingleSelectBean)abstractFieldBean;
-                        return gson.toJson(singleSelectBean);
+                        SingleSelectBean singleSelectBean = (SingleSelectBean) abstractFieldBean;
+                        if (singleSelectBean.getSelectType().equals(SelectType.RADIOGROUP)) {
+                            type = "RADIOGROUP";
+                        } else {
+                            type = "SELECT";
+                        }
+                        
+                        SingleSelectBeanResponse singleSelectBeanResponse = new SingleSelectBeanResponse(
+                                singleSelectBean.getName(), singleSelectBean.isMandatory(), singleSelectBean.getHint(),
+                                singleSelectBean.getAutocomplete(), singleSelectBean.isExpandHint(),
+                                singleSelectBean.getLabel(), singleSelectBean.getValidationRuleId(),
+                                singleSelectBean.getValidationRuleLabel(), singleSelectBean.getValidationRuleClass(),
+                                singleSelectBean.getRegExp(), singleSelectBean.isCaseSensitive(), singleSelectBean.getFieldClass(),
+                                singleSelectBean.getExtraCssClass(), singleSelectBean.isConditional(),
+                                singleSelectBean.isConditionNegate(), singleSelectBean.getConditionFieldName(),
+                                singleSelectBean.getConditionFieldValue(),
+                                singleSelectBean.getValue(), singleSelectBean.getText(), type
+                        );
+                        return gson.toJson(singleSelectBeanResponse);
                     case CHECKBOXGROUP:
-                        CheckBoxGroupBean checkBoxGroupBean = (CheckBoxGroupBean)abstractFieldBean;
-                        return gson.toJson(checkBoxGroupBean);
+                        CheckBoxGroupBean checkBoxGroupBean = (CheckBoxGroupBean) abstractFieldBean;
+                        CheckBoxGroupBeanResponse checkBoxGroupBeanResponse = new CheckBoxGroupBeanResponse(
+                                checkBoxGroupBean.getName(), checkBoxGroupBean.isMandatory(), checkBoxGroupBean.getHint(),
+                                checkBoxGroupBean.getAutocomplete(), checkBoxGroupBean.isExpandHint(),
+                                checkBoxGroupBean.getLabel(), checkBoxGroupBean.getValidationRuleId(),
+                                checkBoxGroupBean.getValidationRuleLabel(), checkBoxGroupBean.getValidationRuleClass(),
+                                checkBoxGroupBean.getRegExp(), checkBoxGroupBean.isCaseSensitive(), checkBoxGroupBean.getFieldClass(),
+                                checkBoxGroupBean.getExtraCssClass(), checkBoxGroupBean.isConditional(),
+                                checkBoxGroupBean.isConditionNegate(), checkBoxGroupBean.getConditionFieldName(),
+                                checkBoxGroupBean.getConditionFieldValue(),
+                                checkBoxGroupBean.getValues(), checkBoxGroupBean.getDisplayValues(),
+                                checkBoxGroupBean.getLength(), checkBoxGroupBean.getMinLength(), checkBoxGroupBean.getMaxLength(),
+                                checkBoxGroupBean.getAllowOther(),
+                                "CHECKBOXGROUP"
+                        );
+                        return gson.toJson(checkBoxGroupBeanResponse);
                     case RADIOGROUP:
                         RadioGroupBean radioGroupBean = (RadioGroupBean) abstractFieldBean;
                         RadioGroupBeanResponse radioGroupBeanResponse = new RadioGroupBeanResponse(
@@ -126,34 +180,110 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 dropdownBean.getExtraCssClass(), dropdownBean.isConditional(),
                                 dropdownBean.isConditionNegate(), dropdownBean.getConditionFieldName(),
                                 dropdownBean.getConditionFieldValue(),
-                                dropdownBean.getValues(), dropdownBean.getDisplayValues(),dropdownBean.getInitialValueOption(),
-                                dropdownBean.getInitialValue(),dropdownBean.getInitialText(), "DROPDOWN"
+                                dropdownBean.getValues(), dropdownBean.getDisplayValues(), dropdownBean.getInitialValueOption(),
+                                dropdownBean.getInitialValue(), dropdownBean.getInitialText(), "DROPDOWN"
                         );
                         return gson.toJson(dropdownBeanResponse);
+                    case DATE_FIELD:
+                        DateFieldBean dateFieldBean = (DateFieldBean) abstractFieldBean;
+                        DateFieldBeanResponse dateFieldBeanResponse = new DateFieldBeanResponse(
+                                dateFieldBean.getName(), dateFieldBean.isMandatory(), dateFieldBean.getHint(),
+                                dateFieldBean.getAutocomplete(), dateFieldBean.isExpandHint(),
+                                dateFieldBean.getLabel(), dateFieldBean.getValidationRuleId(),
+                                dateFieldBean.getValidationRuleLabel(), dateFieldBean.getValidationRuleClass(),
+                                dateFieldBean.getRegExp(), dateFieldBean.isCaseSensitive(), dateFieldBean.getFieldClass(),
+                                dateFieldBean.getExtraCssClass(), dateFieldBean.isConditional(),
+                                dateFieldBean.isConditionNegate(), dateFieldBean.getConditionFieldName(),
+                                dateFieldBean.getConditionFieldValue(),
+                                dateFieldBean.getLength(), dateFieldBean.getDateformat(), dateFieldBean.isInitialValueSet(),
+                                dateFieldBean.isInitialValueDayOffsetMode(), dateFieldBean.getInitialValue(),
+                                dateFieldBean.getInitialValueDayOffset(), dateFieldBean.isInitialValueRuleMode(),
+                                dateFieldBean.getInitialValueRule(), "DATE_FIELD"
+                        );
+                        return gson.toJson(dateFieldBeanResponse);
+                    case CHECKBOX:
+                    case RADIOBOX:
+                        if (abstractFieldBean instanceof CheckBoxBean) {
+                            type = "CHECKBOX";
+                        }
+                        if (abstractFieldBean instanceof RadioBoxBean) {
+                            type = "RADIOBOX";
+                        }
+                        CommonBeanResponse commonBeanResponse = new CommonBeanResponse(
+                                abstractFieldBean.getName(), abstractFieldBean.isMandatory(), abstractFieldBean.getHint(),
+                                abstractFieldBean.getAutocomplete(), abstractFieldBean.isExpandHint(),
+                                abstractFieldBean.getLabel(), abstractFieldBean.getValidationRuleId(),
+                                abstractFieldBean.getValidationRuleLabel(), abstractFieldBean.getValidationRuleClass(),
+                                abstractFieldBean.getRegExp(), abstractFieldBean.isCaseSensitive(), abstractFieldBean.getFieldClass(),
+                                abstractFieldBean.getExtraCssClass(), abstractFieldBean.isConditional(),
+                                abstractFieldBean.isConditionNegate(), abstractFieldBean.getConditionFieldName(),
+                                abstractFieldBean.getConditionFieldValue(), type
+                        );
+                        return gson.toJson(commonBeanResponse);
+                    case LIKERT:
+                        LikertBean likertBean = (LikertBean) abstractFieldBean;
+                        LikertBeanResponse likertBeanResponse = new LikertBeanResponse(
+                                likertBean.getName(), likertBean.isMandatory(), likertBean.getHint(),
+                                likertBean.getAutocomplete(), likertBean.isExpandHint(),
+                                likertBean.getLabel(), likertBean.getValidationRuleId(),
+                                likertBean.getValidationRuleLabel(), likertBean.getValidationRuleClass(),
+                                likertBean.getRegExp(), likertBean.isCaseSensitive(), likertBean.getFieldClass(),
+                                likertBean.getExtraCssClass(), likertBean.isConditional(),
+                                likertBean.isConditionNegate(), likertBean.getConditionFieldName(),
+                                likertBean.getConditionFieldValue(),
+                                likertBean.getOptions(), likertBean.getQuestions(), "LIKERT"
+                        );
+                        return gson.toJson(likertBeanResponse);
+                    case FILEUPLOAD_FIELD:
+                        FileuploadBean fileuploadBean = (FileuploadBean)abstractFieldBean;
+                        FileuploadBeanResponse fileuploadBeanResponse = new FileuploadBeanResponse(
+                                fileuploadBean.getName(), fileuploadBean.isMandatory(), fileuploadBean.getHint(),
+                                fileuploadBean.getAutocomplete(), fileuploadBean.isExpandHint(),
+                                fileuploadBean.getLabel(), fileuploadBean.getValidationRuleId(),
+                                fileuploadBean.getValidationRuleLabel(), fileuploadBean.getValidationRuleClass(),
+                                fileuploadBean.getRegExp(), fileuploadBean.isCaseSensitive(), fileuploadBean.getFieldClass(),
+                                fileuploadBean.getExtraCssClass(), fileuploadBean.isConditional(),
+                                fileuploadBean.isConditionNegate(), fileuploadBean.getConditionFieldName(),
+                                fileuploadBean.getConditionFieldValue(),
+                                fileuploadBean.getMaxUploadSize(), fileuploadBean.getLength(), fileuploadBean.getFileExtensions(),
+                                "FILEUPLOAD_FIELD"
+                        );
+                        return gson.toJson(fileuploadBeanResponse);
+                    case MULTISELECT_BEAN:
+                        MultiSelectBean multiSelectBean = (MultiSelectBean) abstractFieldBean;
+
+                        MultiSelectBeanResponse multiSelectBeanResponse = new MultiSelectBeanResponse(
+                                multiSelectBean.getName(), multiSelectBean.isMandatory(), multiSelectBean.getHint(),
+                                multiSelectBean.getAutocomplete(), multiSelectBean.isExpandHint(),
+                                multiSelectBean.getLabel(), multiSelectBean.getValidationRuleId(),
+                                multiSelectBean.getValidationRuleLabel(), multiSelectBean.getValidationRuleClass(),
+                                multiSelectBean.getRegExp(), multiSelectBean.isCaseSensitive(), multiSelectBean.getFieldClass(),
+                                multiSelectBean.getExtraCssClass(), multiSelectBean.isConditional(),
+                                multiSelectBean.isConditionNegate(), multiSelectBean.getConditionFieldName(),
+                                multiSelectBean.getConditionFieldValue(),
+                                multiSelectBean.getSelectType(), multiSelectBean.getValue(), multiSelectBean.getText(),
+                                "MULTISELECT_BEAN"
+                        );
+                        return gson.toJson(multiSelectBeanResponse);
+                    case ANTISPAM:
+                        AntiSpamFieldBean antiSpamFieldBean = (AntiSpamFieldBean) abstractFieldBean;
+
+                        AntiSpamFieldBeanResponse antiSpamFieldBeanResponse = new AntiSpamFieldBeanResponse(
+                                antiSpamFieldBean.getName(), antiSpamFieldBean.isMandatory(), antiSpamFieldBean.getHint(),
+                                antiSpamFieldBean.getAutocomplete(), antiSpamFieldBean.isExpandHint(),
+                                antiSpamFieldBean.getLabel(), antiSpamFieldBean.getValidationRuleId(),
+                                antiSpamFieldBean.getValidationRuleLabel(), antiSpamFieldBean.getValidationRuleClass(),
+                                antiSpamFieldBean.getRegExp(), antiSpamFieldBean.isCaseSensitive(), antiSpamFieldBean.getFieldClass(),
+                                antiSpamFieldBean.getExtraCssClass(), antiSpamFieldBean.isConditional(),
+                                antiSpamFieldBean.isConditionNegate(), antiSpamFieldBean.getConditionFieldName(),
+                                antiSpamFieldBean.getConditionFieldValue(), antiSpamFieldBean.getAntiSpamType(), "ANTISPAM"
+                        );
+                        return gson.toJson(antiSpamFieldBeanResponse);
                     default:
                         return "not found";
+                }
             }
-
-//                        RADIO,
-//                        RADIOGROUP,
-//                        CHECKBOX,
-//                        DROPDOWN,
-//                        RADIOBOX,
-//                        SIMPLETEXTFIELD,
-//                        LIKERT,
-//                        TEXT_FIELD,
-//                        FILEUPLOAD_FIELD,
-//                        ,
-//                        MULTISELECT_BEAN,
-//                        MULTI_SELECT,
-//                        SUBMITBUTTON,
-//                        DATE_FIELD,
-//                        ANTISPAM
-            }
-
-
         }
-
         return "not found";
     }
 
