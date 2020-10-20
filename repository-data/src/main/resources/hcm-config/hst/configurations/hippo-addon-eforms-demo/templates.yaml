@@ -7,7 +7,7 @@ definitions:
         hst:renderpath: jsp/home/main/content.jsp
       /layout.webpage:
         jcr:primaryType: hst:template
-        hst:renderpath: ftl/react/react-base-layout.ftl
+        hst:renderpath: jsp/layout/webpage.jsp
       /news.main.content:
         jcr:primaryType: hst:template
         hst:renderpath: jsp/news/main/content.jsp
@@ -47,3 +47,6 @@ definitions:
       /home.main:
         jcr:primaryType: hst:template
         hst:renderpath: jsp/home/main.jsp
+      /layout.form.webpage:
+        jcr:primaryType: hst:template
+        hst:renderpath: ftl/react/react-base-layout.ftl

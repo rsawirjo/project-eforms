@@ -11,7 +11,6 @@ definitions:
             hst:mountpoint: /hst:hst/hst:sites/hippoaddoneformsdemo
             hst:pagemodelapi: resourceapi
             hst:responseheaders: ['["Access-Control-Allow-Origin: *"]', 'Access-Control-Allow-Origin:http://localhost:3000']
-            hst:namedpipeline: SpaSitePipeline
             /restservices:
               .meta:residual-child-node-category: content
               jcr:primaryType: hst:mount
