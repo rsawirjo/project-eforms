@@ -5,6 +5,7 @@ package com.onehippo.cms7.eforms.demo.beans;
 
 import javax.jcr.RepositoryException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.hippoecm.hst.content.beans.ContentNodeBinder;
 import org.hippoecm.hst.content.beans.ContentNodeBindingException;
 import org.hippoecm.hst.content.beans.Node;
@@ -89,18 +90,26 @@ public class SbiCodeRow extends HippoCompound implements ContentNodeBinder {
     public boolean bind(final Object content, final javax.jcr.Node node) throws ContentNodeBindingException {
         if (content instanceof SbiCodeRow) {
             SbiCodeRow sbiCodeRow = (SbiCodeRow) content;
-            try {
-                node.setPrimaryType("hippoaddoneformsdemo:sbicoderow");
-                node.setProperty("hippoaddoneformsdemo:sbi", sbiCodeRow.getSbi());
-                node.setProperty("hippoaddoneformsdemo:description", sbiCodeRow.getDescription());
-                node.setProperty("hippoaddoneformsdemo:zzppackage", sbiCodeRow.getZzpPackage());
-                node.setProperty("hippoaddoneformsdemo:premieextax", sbiCodeRow.getPremieExTax());
-                node.setProperty("hippoaddoneformsdemo:bik", sbiCodeRow.getBik());
-                node.setProperty("hippoaddoneformsdemo:price", sbiCodeRow.getPrice());
-                node.setProperty("hippoaddoneformsdemo:premieinctax", sbiCodeRow.getPremieIncTax());
-                return true;
-            } catch (RepositoryException e) {
-                throw new ContentNodeBindingException();
+            if (!StringUtils.isAllEmpty(sbiCodeRow.getSbi(),
+                    sbiCodeRow.getDescription(),
+                    sbiCodeRow.getZzpPackage(),
+                    sbiCodeRow.getPremieExTax(),
+                    sbiCodeRow.getBik(),
+                    sbiCodeRow.getPrice(),
+                    sbiCodeRow.getPremieIncTax())) {
+                try {
+                    node.setPrimaryType("hippoaddoneformsdemo:sbicoderow");
+                    node.setProperty("hippoaddoneformsdemo:sbi", sbiCodeRow.getSbi());
+                    node.setProperty("hippoaddoneformsdemo:description", sbiCodeRow.getDescription());
+                    node.setProperty("hippoaddoneformsdemo:zzppackage", sbiCodeRow.getZzpPackage());
+                    node.setProperty("hippoaddoneformsdemo:premieextax", sbiCodeRow.getPremieExTax());
+                    node.setProperty("hippoaddoneformsdemo:bik", sbiCodeRow.getBik());
+                    node.setProperty("hippoaddoneformsdemo:price", sbiCodeRow.getPrice());
+                    node.setProperty("hippoaddoneformsdemo:premieinctax", sbiCodeRow.getPremieIncTax());
+                    return true;
+                } catch (RepositoryException e) {
+                    throw new ContentNodeBindingException();
+                }
             }
         }
         return false;
