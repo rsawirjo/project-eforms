@@ -12,3 +12,12 @@ definitions:
             hst:xtype: hst.vbox
             hippo:identifier: 11273e8a-762d-44b7-be0f-2dff7bd515b4
             hst:lastmodified: 2020-10-15T15:06:06.223+02:00
+        /newspage:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: 11273e8a-762d-44b7-be0f-2dff7bd515b4
+            hst:label: Home Page Main
+            hst:lastmodified: 2020-10-15T15:06:06.223+02:00
+            hst:xtype: hst.vbox
