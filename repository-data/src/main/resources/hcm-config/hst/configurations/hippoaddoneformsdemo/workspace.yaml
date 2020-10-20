@@ -18,6 +18,6 @@ definitions:
             .meta:residual-child-node-category: content
             jcr:primaryType: hst:containercomponent
             hippo:identifier: 11273e8a-762d-44b7-be0f-2dff7bd515b4
-            hst:label: Home Page Main
+            hst:label: News page Main
             hst:lastmodified: 2020-10-15T15:06:06.223+02:00
             hst:xtype: hst.vbox
