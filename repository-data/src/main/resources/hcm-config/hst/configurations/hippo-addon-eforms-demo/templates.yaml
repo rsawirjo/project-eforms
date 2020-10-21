@@ -47,3 +47,6 @@ definitions:
       /home.main:
         jcr:primaryType: hst:template
         hst:renderpath: jsp/home/main.jsp
+      /layout.form.webpage:
+        jcr:primaryType: hst:template
+        hst:renderpath: ftl/react/react-base-layout.ftl

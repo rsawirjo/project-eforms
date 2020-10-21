@@ -26,6 +26,8 @@ import org.hippoecm.hst.core.component.HstComponentException;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 import org.hippoecm.hst.core.request.ComponentConfiguration;
+import org.hippoecm.repository.api.StringCodec;
+import org.hippoecm.repository.api.StringCodecFactory;
 import org.onehippo.repository.documentworkflow.DocumentWorkflow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,7 +38,6 @@ import com.onehippo.cms7.eforms.demo.util.ContextHelper;
 import com.onehippo.cms7.eforms.hst.beans.FormBean;
 import com.onehippo.cms7.eforms.hst.behaviors.StoreFormDataBehavior;
 import com.onehippo.cms7.eforms.hst.model.Form;
-import com.opencsv.CSVReader;
 import com.opencsv.bean.CsvToBeanBuilder;
 
 /**
@@ -44,6 +45,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
  * a jcr node structure.
  */
 public class SbiCodeDataBehavior extends StoreFormDataBehavior {
+    public static final String CONTENT_DOCUMENTS_HIPPOADDONEFORMSDEMO_SBICODE_FILE = "/content/documents/hippoaddoneformsdemo/sbicode-files";
     private static final String JAVA_IO_TMP_DIR = "java.io.tmpdir";
     private static final String EFORMS_TMP_DIR = "eforms.tmp.dir";
 
@@ -185,9 +187,16 @@ public class SbiCodeDataBehavior extends StoreFormDataBehavior {
 
     private SbiCodeMap writeSbiCodeMapToRepo(final SbiCodeMap sbiCodeMap, final WorkflowPersistenceManager wpm,
                                              final String fileName) throws ObjectBeanManagerException {
-        final String SbiCodeMapDocumentPath = wpm.createAndReturn("/content/documents/hippoaddoneformsdemo/sbicode-files",
+        StringCodec uriEncoding = new StringCodecFactory.UriEncoding();
+        String encodeFileName = uriEncoding.encode(fileName);
+        String sbiCodeMapDocumentPath = CONTENT_DOCUMENTS_HIPPOADDONEFORMSDEMO_SBICODE_FILE + "/" + encodeFileName + "/" + encodeFileName;
+        SbiCodeMap possibleExistingSbiCodeMap = (SbiCodeMap) wpm.getObject(sbiCodeMapDocumentPath);
+        if (possibleExistingSbiCodeMap != null) {
+            wpm.remove(possibleExistingSbiCodeMap);
+        }
+        final String sbiCodeMapNewDocumentPath = wpm.createAndReturn(CONTENT_DOCUMENTS_HIPPOADDONEFORMSDEMO_SBICODE_FILE,
                 "hippoaddoneformsdemo:sbicodemap", fileName, true);
-        final SbiCodeMap newSbiCodeMap = (SbiCodeMap) wpm.getObject(SbiCodeMapDocumentPath);
+        final SbiCodeMap newSbiCodeMap = (SbiCodeMap) wpm.getObject(sbiCodeMapNewDocumentPath);
         if (newSbiCodeMap == null) {
             throw new HstComponentException("Failed to add SbiCodeMap");
         }

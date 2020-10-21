@@ -6,38 +6,28 @@
   hippostd:foldertype: [new-translated-folder, new-document]
   hippotranslation:id: d277a180-a59c-4045-9054-0ca52f64b1bc
   hippotranslation:locale: en
-  /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[1]:
+  /20200909_sbi-lijst-zzp---incentro-sjabloon.csv:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
-    jcr:uuid: 9d341082-61f0-4acb-9720-b77d3d66743a
+    jcr:uuid: 413e4599-7d6f-4a5c-9733-bd2025afecf2
     hippo:name: 20200909_SBI-lijst ZZP - Incentro Sjabloon.csv
-    hippo:versionHistory: aeaf19ab-6edc-4f46-9c9f-66efcc3f28f1
+    hippo:versionHistory: f948ed0d-f6ab-4e01-9390-7811e44e2d61
     /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[1]:
       jcr:primaryType: hippoaddoneformsdemo:sbicodemap
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 1efda23a-6cc5-4fe9-98e3-56e64e8b3df3
+      jcr:uuid: d256dc33-2043-4168-8f2d-3f815ce2a05e
       hippo:availability: []
       hippoaddoneformsdemo:filename: ''
       hippostd:retainable: false
       hippostd:state: draft
-      hippostd:transferable: false
       hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-19T14:11:41.988+02:00
-      hippostdpubwf:lastModifiedBy: admin
-      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippostdpubwf:creationDate: 2020-10-20T15:54:58.016+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T15:54:58.341+02:00
+      hippostdpubwf:lastModifiedBy: sitewriter
+      hippotranslation:id: f231a19b-9e7d-4232-be5c-9887333b6d7d
       hippotranslation:locale: en
-      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      jcr:lastModified: 2020-10-20T15:54:58.401+02:00
       /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
-      /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9999999'
         hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
@@ -47,7 +37,7 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0111-99999
         hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
-      /hippoaddoneformsdemo:sbicoderow[3]:
+      /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9305030'
         hippoaddoneformsdemo:description: Hondentrimsalon
@@ -56,7 +46,7 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0162-1629
         hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
+      /hippoaddoneformsdemo:sbicoderow[3]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '2224010'
         hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
@@ -68,28 +58,19 @@
     /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[2]:
       jcr:primaryType: hippoaddoneformsdemo:sbicodemap
       jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
-      jcr:uuid: 74a28004-e9b2-4cc5-b690-019b6507ceec
+      jcr:uuid: 03f961dc-2c76-42a5-a22f-b4c8a08bfeba
       hippo:availability: [preview]
       hippoaddoneformsdemo:filename: ''
       hippostd:retainable: false
       hippostd:state: unpublished
       hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-13T21:03:56.453+02:00
+      hippostdpubwf:creationDate: 2020-10-20T15:54:58.016+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T15:54:58.503+02:00
       hippostdpubwf:lastModifiedBy: sitewriter
-      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippotranslation:id: f231a19b-9e7d-4232-be5c-9887333b6d7d
       hippotranslation:locale: en
-      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      jcr:lastModified: 2020-10-20T15:54:58.401+02:00
       /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
-      /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9999999'
         hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
@@ -99,7 +80,7 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0111-99999
         hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
-      /hippoaddoneformsdemo:sbicoderow[3]:
+      /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9305030'
         hippoaddoneformsdemo:description: Hondentrimsalon
@@ -108,7 +89,7 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0162-1629
         hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
+      /hippoaddoneformsdemo:sbicoderow[3]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '2224010'
         hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
@@ -120,29 +101,20 @@
     /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[3]:
       jcr:primaryType: hippoaddoneformsdemo:sbicodemap
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 85941591-d427-41a2-816e-59cd7c81553b
+      jcr:uuid: 21982600-bc7e-449c-9fdd-2953e007d331
       hippo:availability: [live]
       hippoaddoneformsdemo:filename: ''
       hippostd:retainable: false
       hippostd:state: published
       hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-13T21:03:51.261+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-13T21:03:56.453+02:00
+      hippostdpubwf:creationDate: 2020-10-20T15:54:58.016+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T15:54:58.503+02:00
       hippostdpubwf:lastModifiedBy: sitewriter
-      hippostdpubwf:publicationDate: 2020-10-13T21:03:57.090+02:00
-      hippotranslation:id: f9a6a1b9-6805-46e0-88a1-517ed3274d47
+      hippostdpubwf:publicationDate: 2020-10-20T15:54:58.783+02:00
+      hippotranslation:id: f231a19b-9e7d-4232-be5c-9887333b6d7d
       hippotranslation:locale: en
-      jcr:lastModified: 2020-10-13T21:03:56.142+02:00
+      jcr:lastModified: 2020-10-20T15:54:58.401+02:00
       /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
-      /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9999999'
         hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
@@ -152,66 +124,8 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0111-99999
         hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
-      /hippoaddoneformsdemo:sbicoderow[3]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9305030'
-        hippoaddoneformsdemo:description: Hondentrimsalon
-        hippoaddoneformsdemo:premieextax: '58.25'
-        hippoaddoneformsdemo:premieinctax: '68.02'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0162-1629
-        hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '2224010'
-        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
-        hippoaddoneformsdemo:premieextax: '53.47'
-        hippoaddoneformsdemo:premieinctax: '64.05'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 1813-99999
-        hippoaddoneformsdemo:zzppackage: White
-  /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[2]:
-    jcr:primaryType: hippo:handle
-    jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
-    jcr:uuid: 64eea4a5-7fce-49eb-b3d1-fbd9aa4d68d4
-    hippo:name: 20200909_SBI-lijst ZZP - Incentro Sjabloon.csv
-    hippo:versionHistory: 5f57a9ca-168c-492f-b114-98d64a6da63f
-    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[1]:
-      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
-      jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 980299d5-3960-4a07-9e39-ea026fc2a4cb
-      hippo:availability: []
-      hippoaddoneformsdemo:filename: ''
-      hippostd:retainable: false
-      hippostd:state: draft
-      hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-19T14:13:21.773+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-19T14:13:22.519+02:00
-      hippostdpubwf:lastModifiedBy: sitewriter
-      hippotranslation:id: 39dcd6fe-e3d2-4235-9c65-97504b75c271
-      hippotranslation:locale: en
-      jcr:lastModified: 2020-10-19T14:13:22.570+02:00
-      /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
       /hippoaddoneformsdemo:sbicoderow[2]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9999999'
-        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
-          zaden
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0111-99999
-        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
-      /hippoaddoneformsdemo:sbicoderow[3]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '9305030'
         hippoaddoneformsdemo:description: Hondentrimsalon
         hippoaddoneformsdemo:premieextax: '58.25'
@@ -219,112 +133,7 @@
         hippoaddoneformsdemo:price: ''
         hippoaddoneformsdemo:sbi: 0162-1629
         hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '2224010'
-        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
-        hippoaddoneformsdemo:premieextax: '53.47'
-        hippoaddoneformsdemo:premieinctax: '64.05'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 1813-99999
-        hippoaddoneformsdemo:zzppackage: White
-    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[2]:
-      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
-      jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
-      jcr:uuid: 0a7d7674-9298-4b1d-98c8-ee4e962c6377
-      hippo:availability: [preview]
-      hippoaddoneformsdemo:filename: ''
-      hippostd:retainable: false
-      hippostd:state: unpublished
-      hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-19T14:13:21.773+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-19T14:13:22.679+02:00
-      hippostdpubwf:lastModifiedBy: sitewriter
-      hippotranslation:id: 39dcd6fe-e3d2-4235-9c65-97504b75c271
-      hippotranslation:locale: en
-      jcr:lastModified: 2020-10-19T14:13:22.570+02:00
-      /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
-      /hippoaddoneformsdemo:sbicoderow[2]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9999999'
-        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
-          zaden
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0111-99999
-        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
       /hippoaddoneformsdemo:sbicoderow[3]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9305030'
-        hippoaddoneformsdemo:description: Hondentrimsalon
-        hippoaddoneformsdemo:premieextax: '58.25'
-        hippoaddoneformsdemo:premieinctax: '68.02'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0162-1629
-        hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '2224010'
-        hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten
-        hippoaddoneformsdemo:premieextax: '53.47'
-        hippoaddoneformsdemo:premieinctax: '64.05'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 1813-99999
-        hippoaddoneformsdemo:zzppackage: White
-    /20200909_sbi-lijst-zzp---incentro-sjabloon.csv[3]:
-      jcr:primaryType: hippoaddoneformsdemo:sbicodemap
-      jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 166494f2-0fb6-4251-a9ed-971f62ad2086
-      hippo:availability: [live]
-      hippoaddoneformsdemo:filename: ''
-      hippostd:retainable: false
-      hippostd:state: published
-      hippostdpubwf:createdBy: sitewriter
-      hippostdpubwf:creationDate: 2020-10-19T14:13:21.773+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-19T14:13:22.679+02:00
-      hippostdpubwf:lastModifiedBy: sitewriter
-      hippostdpubwf:publicationDate: 2020-10-19T14:13:22.937+02:00
-      hippotranslation:id: 39dcd6fe-e3d2-4235-9c65-97504b75c271
-      hippotranslation:locale: en
-      jcr:lastModified: 2020-10-19T14:13:22.570+02:00
-      /hippoaddoneformsdemo:sbicoderow[1]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: ''
-        hippoaddoneformsdemo:description: ''
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: ''
-        hippoaddoneformsdemo:zzppackage: ''
-      /hippoaddoneformsdemo:sbicoderow[2]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9999999'
-        hippoaddoneformsdemo:description: Teelt van granen, peulvruchten en oliehoudende
-          zaden
-        hippoaddoneformsdemo:premieextax: ''
-        hippoaddoneformsdemo:premieinctax: ''
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0111-99999
-        hippoaddoneformsdemo:zzppackage: Geen ZZP Schadepakket
-      /hippoaddoneformsdemo:sbicoderow[3]:
-        jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-        hippoaddoneformsdemo:bik: '9305030'
-        hippoaddoneformsdemo:description: Hondentrimsalon
-        hippoaddoneformsdemo:premieextax: '58.25'
-        hippoaddoneformsdemo:premieinctax: '68.02'
-        hippoaddoneformsdemo:price: ''
-        hippoaddoneformsdemo:sbi: 0162-1629
-        hippoaddoneformsdemo:zzppackage: Blue
-      /hippoaddoneformsdemo:sbicoderow[4]:
         jcr:primaryType: hippoaddoneformsdemo:sbicoderow
         hippoaddoneformsdemo:bik: '2224010'
         hippoaddoneformsdemo:description: Prepress- en/of premedia-activiteiten

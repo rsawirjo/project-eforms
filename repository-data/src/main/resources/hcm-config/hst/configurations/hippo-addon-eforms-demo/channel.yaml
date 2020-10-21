@@ -8,3 +8,4 @@ definitions:
       /hst:channelinfo:
         jcr:primaryType: hst:channelinfo
         headerName: Hippo Addon Enterprise Forms Demo Website
+        org.hippoecm.hst.configuration.channel.PreviewURLChannelInfo_url: http://localhost:3000/spa

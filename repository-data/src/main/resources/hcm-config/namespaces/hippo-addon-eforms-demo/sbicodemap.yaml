@@ -11,7 +11,7 @@ definitions:
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
-          jcr:uuid: 733da0fe-95b2-4116-b9bf-dc02f4ae753f
+          jcr:uuid: a1ad0857-2a08-4b4b-8aac-1d33b5c189eb
           hipposysedit:node: true
           hipposysedit:supertype: ['hippoaddoneformsdemo:basedocument', 'hippostd:relaxed',
             'hippotranslation:translated']
@@ -37,7 +37,7 @@ definitions:
         /hipposysedit:prototype:
           jcr:primaryType: hippoaddoneformsdemo:sbicodemap
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: d2cb4fbf-1eb5-4aa2-a989-63a0ce31dfbe
+          jcr:uuid: 7254a7bb-1c4c-4899-b0b0-1bb5359ec2f6
           hippoaddoneformsdemo:filename: ''
           hippostd:holder: holder
           hippostd:state: draft
@@ -47,15 +47,6 @@ definitions:
           hippostdpubwf:lastModifiedBy: ''
           hippotranslation:id: document-type-locale-id
           hippotranslation:locale: document-type-locale
-          /hippoaddoneformsdemo:sbicoderow:
-            jcr:primaryType: hippoaddoneformsdemo:sbicoderow
-            hippoaddoneformsdemo:bik: ''
-            hippoaddoneformsdemo:description: ''
-            hippoaddoneformsdemo:premieextax: ''
-            hippoaddoneformsdemo:premieinctax: ''
-            hippoaddoneformsdemo:price: ''
-            hippoaddoneformsdemo:sbi: ''
-            hippoaddoneformsdemo:zzppackage: ''
       /editor:templates:
         jcr:primaryType: editor:templateset
         /_default_:
