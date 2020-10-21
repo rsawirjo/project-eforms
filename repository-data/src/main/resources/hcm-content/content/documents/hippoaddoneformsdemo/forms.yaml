@@ -457,8 +457,9 @@
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
       hippo:availability: []
-      hippostd:holder: admin
+      hippostd:retainable: false
       hippostd:state: draft
+      hippostd:transferable: false
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-03T17:46:50.817-04:00
       hippostdpubwf:lastModificationDate: 2020-10-13T14:20:05.642+02:00
@@ -802,6 +803,7 @@
       eforms:actionurl: http://test.com/action.do
       eforms:confirmationemailfields: ''
       eforms:formname: Registration Form
+      eforms:notificationemail: test@example.com
       eforms:validationhelper: true
       hippo:availability: [preview]
       hippostd:state: unpublished
@@ -949,6 +951,7 @@
       eforms:confirmationemailfields: ''
       eforms:formintro: This is the form introduction
       eforms:formname: Registration Form
+      eforms:notificationemail: test@example.com
       eforms:validationhelper: true
       hippo:availability: []
       hippostd:retainable: false
@@ -1168,6 +1171,7 @@
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
       eforms:confirmationemailfields: ''
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'true'
       eforms:validationhelper: true
@@ -1319,6 +1323,7 @@
       eforms:confirmationemailfields: ''
       eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [live]
@@ -1456,6 +1461,7 @@
       eforms:confirmationemailfields: ''
       eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [preview]
@@ -1591,27 +1597,29 @@
       eforms:confirmationemailfields: ''
       eforms:formintro: this is the form intro
       eforms:formname: Multi Page Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: []
       hippostd:retainable: false
       hippostd:state: draft
+      hippostd:transferable: false
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
-      hippostdpubwf:lastModificationDate: 2020-10-16T15:56:16.779+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-19T13:43:35.856+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: 5e2bda34-0dad-432c-a4a6-9522bf3ba185
       hippotranslation:locale: en
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 81dc89a4-c558-485c-aab6-685b5c6ab1f2
+        jcr:uuid: 169f954a-5d41-41ec-9bab-47d5bd34e9a7
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:fieldname: bundle-type
         eforms:label: Bundle Type
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: be098244-f811-47eb-937d-dc751fc3db5c
+          jcr:uuid: 8a6024eb-234a-4d5e-9a98-76318340c032
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [TV + Phone, TV + Internet, TV + Phone + Internet]
@@ -1626,7 +1634,7 @@
           eforms:values: [tv_phone, tv_internet, tv_phone_internet]
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: 2b2efdd2-a712-4870-b447-f22aacf072f6
+          jcr:uuid: 65493abd-0f3d-4fdb-806f-28df1c2a79bf
           eforms:allowother: false
           eforms:conditional: true
           eforms:conditionfield: bundle-type
@@ -1645,7 +1653,7 @@
           eforms:values: [keep-old-number]
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: f70bfc24-931b-4bd2-a504-bb8ce962cb08
+        jcr:uuid: dbadade8-47d0-4f5f-8024-8fb9d04fc54e
         eforms:conditional: true
         eforms:conditionfield: bundle-type
         eforms:conditionnegate: false
@@ -1654,7 +1662,7 @@
         eforms:label: 3-in-1 Rebate Option
         /field0:
           jcr:primaryType: eforms:radiogroup
-          jcr:uuid: 02e3d280-4963-4a4c-b3b1-b7f11b696c2c
+          jcr:uuid: f6048314-5966-4382-bfea-b263b61f7c3b
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -1671,13 +1679,13 @@
           eforms:values: [mail-in-rebate, rebate-in-balance]
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 2b88c9db-e7b5-4add-be38-e44ab64aab10
+        jcr:uuid: eb9dc86a-3e04-4fb1-931d-6634e4b3e533
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Contact Information
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: a6a83290-d1ab-4740-abb7-3727c8eec430
+          jcr:uuid: 5a568e34-ebd7-4756-bd91-73884f2e5518
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: ida1350f3a6ee5d467
@@ -1692,7 +1700,7 @@
           eforms:validexpression: ''
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 0cf60353-6af2-4fe3-ad49-94543efba5b6
+          jcr:uuid: c46232d8-d710-4071-b5b3-2ca75e22a7bb
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9629897e0e49a73b
@@ -1705,7 +1713,7 @@
           eforms:validexpression: ''
       /emailconfiguration0:
         jcr:primaryType: eforms:formconfiguration
-        jcr:uuid: ceebaac8-b91a-494f-aabf-caa478a84ceb
+        jcr:uuid: 3f0f5c10-ae18-4e08-bffb-f0712bee51a0
         eforms:addattachments: 'true'
         eforms:mailformdata: ''
         eforms:notificationbccemail: ''
@@ -1841,6 +1849,7 @@
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
       eforms:formname: After Process Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: [preview]
@@ -1959,11 +1968,13 @@
       eforms:buttonlabel: Contact me!
       eforms:confirmationemailfields: ''
       eforms:formname: After Process Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:validationhelper: true
       hippo:availability: []
-      hippostd:holder: admin
+      hippostd:retainable: false
       hippostd:state: draft
+      hippostd:transferable: false
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2013-04-18T15:45:01.158-04:00
       hippostdpubwf:lastModificationDate: 2020-10-16T15:56:09.276+02:00
@@ -2190,6 +2201,7 @@
       eforms:formintro: Enterprise Form Bar Camp is an annual event you can join in
         for free!
       eforms:formname: Example Plugged-in Form
+      eforms:notificationemail: test@example.com
       eforms:storeformdata: 'true'
       eforms:submissioncountlimit: '10'
       eforms:submissioncountlimittext: Sorry, join request count exceeds the maximum.
@@ -3573,29 +3585,36 @@
             eforms:validexpression: \b[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b
   /zzp-form:
     jcr:primaryType: hippo:handle
-    jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+    jcr:mixinTypes: ['hippo:named', 'hippo:versionInfo', 'mix:referenceable']
     jcr:uuid: 8cf3de0c-7432-42a9-88e0-56d36db1393f
     hippo:name: ZZP form
-    /zzp-form:
+    hippo:versionHistory: 350a485f-f799-48f4-a1cf-85b98c9d9264
+    /zzp-form[1]:
       jcr:primaryType: eforms:form
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
       jcr:uuid: f737066c-d808-4ce7-b2a7-1ec6c7e43ffb
       eforms:action: mail
       eforms:actionurl: http://test.com/action.do
+      eforms:buttonlabel: Versturen
+      eforms:confirmationemailfields: ''
+      eforms:formname: ZZP premieaanvraag
+      eforms:nextbuttonlabel: Volgende
+      eforms:notificationemail: test@example.com
+      eforms:previousbuttonlabel: Vorige
       eforms:storeformdata: 'true'
       eforms:usestoredataforcounter: 'false'
       hippo:availability: []
-      hippostd:holder: admin
+      hippostd:retainable: false
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-16T16:39:14.915+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T17:01:36.360+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
       hippotranslation:locale: en
       /emailconfiguration0:
         jcr:primaryType: eforms:formconfiguration
-        jcr:uuid: 24ce7e59-3801-4853-9f1e-5d8b8d0b1ad5
+        jcr:uuid: 08a3f75b-ce0a-4013-82ba-d1a773d5a07a
         eforms:addattachments: 'true'
         eforms:mailformdata: ''
         eforms:notificationbccemail: ''
@@ -3607,22 +3626,402 @@
         eforms:notificationtext: ''
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 47220777-5c2d-4d38-8213-4a6a0758a4d1
+        jcr:uuid: 99ca97dd-a84b-4135-9b7d-9fe87418b166
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: a75324b4-5e2c-4214-a9da-23226533c094
+          jcr:uuid: 55f09b5e-bca3-49a1-b41b-4f19b2734865
+          eforms:autocomplete: ''
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:displayvalues: [Choice 1]
+          eforms:expandhint: false
           eforms:fieldid: idb30754096b1fb7af
           eforms:fieldname: zzp_sector_picker
-          eforms:hint: ''
+          eforms:hint: Choose your sector
           eforms:initialdisplaystring: ''
           eforms:initialoption: value
           eforms:initialvalue: Choice 1
           eforms:label: Sector
           eforms:mandatory: false
+          eforms:values: [premie, geenpremie]
+          first: floep
+      /page1:
+        jcr:primaryType: eforms:page
+        jcr:uuid: ae26711a-1262-4073-a945-437ba6e60981
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: geenpremie
+        eforms:label: Page 2
+        /field2:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: 7c544c07-452b-4792-92e0-ee7a8d9aac48
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: id9585854ba11513a8
+          eforms:fieldname: expl
+          eforms:hint: ''
+          eforms:label: We kunnen online geen verzekering aanbieden. Vul je gegevens
+            in zodat we contact kunnen opnemen
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:checkboxes
+          jcr:uuid: a9bb037e-d845-48fe-a1de-62b8f8850f05
+          eforms:allowother: false
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:fieldid: ida64f2221cd7fd412
+          eforms:fieldname: contactme
+          eforms:hint: field_hint
+          eforms:label: Contact me
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
           eforms:values: [Choice 1]
+        /field0:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: 59577c73-e000-4199-a64a-35337c1f4d39
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: idbc8ab8a3bae7f63a
+          eforms:fieldname: email-fail
+          eforms:hint: ''
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validationruleclass: com.onehippo.cms7.eforms.hst.validation.rules.EmailAddressRule
+          eforms:validationruleid: email
+          eforms:validationrulelabel: E-mail Address
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+      /page2:
+        jcr:primaryType: eforms:page
+        jcr:uuid: 141fab16-6a2c-48a8-aacf-00f1ed0a0cc1
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: premie
+        eforms:label: Page 3
+        /field0:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: 1bfc0a20-79c0-4fb9-bf2b-c4e92a699a2d
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: ida2ff8584d246d330
+          eforms:fieldname: zzp_amount
+          eforms:hint: ''
+          eforms:label: 'Premie voor de gekozen activiteit: x'
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: 0029c4d0-4c27-4e53-9f76-599ddde03bdc
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: ida84fcad100144530
+          eforms:fieldname: email
+          eforms:hint: field_hint
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+    /zzp-form[2]:
+      jcr:primaryType: eforms:form
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable', 'mix:versionable']
+      jcr:uuid: 626d894d-b4c4-4dc9-a5ef-71be8cdcc054
+      eforms:action: mail
+      eforms:actionurl: http://test.com/action.do
+      eforms:buttonlabel: Versturen
+      eforms:confirmationemailfields: ''
+      eforms:formname: ZZP premieaanvraag
+      eforms:nextbuttonlabel: Volgende
+      eforms:notificationemail: test@example.com
+      eforms:previousbuttonlabel: Vorige
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'false'
+      hippo:availability: [preview]
+      hippostd:retainable: false
+      hippostd:state: unpublished
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T17:01:48.861+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
+      hippotranslation:locale: en
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: d41e613f-45de-4afa-a43d-db84f89ffb46
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
+      /page0:
+        jcr:primaryType: eforms:page
+        jcr:uuid: 3f5d2b8b-058d-4a98-b2a3-6f7219733475
+        eforms:conditional: false
+        eforms:conditionnegate: false
+        eforms:label: Page 1
+        /field0:
+          jcr:primaryType: eforms:dropdown
+          jcr:uuid: 89ba06fe-e7a6-4f5a-910d-348f24e23a15
+          eforms:autocomplete: ''
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:expandhint: false
+          eforms:fieldid: idb30754096b1fb7af
+          eforms:fieldname: zzp_sector_picker
+          eforms:hint: Choose your sector
+          eforms:initialdisplaystring: ''
+          eforms:initialoption: value
+          eforms:initialvalue: Choice 1
+          eforms:label: Sector
+          eforms:mandatory: false
+          eforms:values: [premie, geenpremie]
+          first: floep
+      /page1:
+        jcr:primaryType: eforms:page
+        jcr:uuid: e522824a-2f0b-487e-8380-4e92355a8773
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: geenpremie
+        eforms:label: Page 2
+        /field2:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: a432e414-3d12-4d35-a77e-48aaf7f6dda5
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: id9585854ba11513a8
+          eforms:fieldname: expl
+          eforms:hint: ''
+          eforms:label: We kunnen online geen verzekering aanbieden. Vul je gegevens
+            in zodat we contact kunnen opnemen
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:checkboxes
+          jcr:uuid: 7c45e3aa-8a66-4472-8a11-1c77b7800ad5
+          eforms:allowother: false
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:fieldid: ida64f2221cd7fd412
+          eforms:fieldname: contactme
+          eforms:hint: field_hint
+          eforms:label: Contact me
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+          eforms:values: [Choice 1]
+        /field0:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: fa65ba36-d151-4b8a-a88e-dcde32cf72a8
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: idbc8ab8a3bae7f63a
+          eforms:fieldname: email-fail
+          eforms:hint: ''
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validationruleclass: com.onehippo.cms7.eforms.hst.validation.rules.EmailAddressRule
+          eforms:validationruleid: email
+          eforms:validationrulelabel: E-mail Address
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+      /page2:
+        jcr:primaryType: eforms:page
+        jcr:uuid: 7e9a4a1f-5c4f-4eaa-bc59-d8723271df5a
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: premie
+        eforms:label: Page 3
+        /field0:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: 7459722a-5194-4a1c-b990-97203d0f611d
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: ida2ff8584d246d330
+          eforms:fieldname: zzp_amount
+          eforms:hint: ''
+          eforms:label: 'Premie voor de gekozen activiteit: x'
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: 559e4d56-2bef-4b26-ac13-a5fe6fda7bbf
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: ida84fcad100144530
+          eforms:fieldname: email
+          eforms:hint: field_hint
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+    /zzp-form[3]:
+      jcr:primaryType: eforms:form
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: ab9f4676-467e-46ed-b539-ce837a21bb08
+      eforms:action: mail
+      eforms:actionurl: http://test.com/action.do
+      eforms:buttonlabel: Versturen
+      eforms:confirmationemailfields: ''
+      eforms:formname: ZZP premieaanvraag
+      eforms:nextbuttonlabel: Volgende
+      eforms:notificationemail: test@example.com
+      eforms:previousbuttonlabel: Vorige
+      eforms:storeformdata: 'true'
+      eforms:usestoredataforcounter: 'false'
+      hippo:availability: [live]
+      hippostd:retainable: false
+      hippostd:state: published
+      hippostdpubwf:createdBy: admin
+      hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-20T17:01:48.861+02:00
+      hippostdpubwf:lastModifiedBy: admin
+      hippostdpubwf:publicationDate: 2020-10-20T17:01:50.586+02:00
+      hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
+      hippotranslation:locale: en
+      /emailconfiguration0:
+        jcr:primaryType: eforms:formconfiguration
+        jcr:uuid: 3ca3b36f-1dc1-49a1-b4cd-10041fd14d89
+        eforms:addattachments: 'true'
+        eforms:mailformdata: ''
+        eforms:notificationbccemail: ''
+        eforms:notificationccemail: ''
+        eforms:notificationemail: test@example.com
+        eforms:notificationreplytoemailfields: ''
+        eforms:notificationsubject: ''
+        eforms:notificationtemplate: ''
+        eforms:notificationtext: ''
+      /page0:
+        jcr:primaryType: eforms:page
+        jcr:uuid: 675c5f39-b852-4560-8a31-94fb5bdcbbef
+        eforms:conditional: false
+        eforms:conditionnegate: false
+        eforms:label: Page 1
+        /field0:
+          jcr:primaryType: eforms:dropdown
+          jcr:uuid: 4ac4eaab-7fbf-45b4-98a6-6f12256f087d
+          eforms:autocomplete: ''
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:expandhint: false
+          eforms:fieldid: idb30754096b1fb7af
+          eforms:fieldname: zzp_sector_picker
+          eforms:hint: Choose your sector
+          eforms:initialdisplaystring: ''
+          eforms:initialoption: value
+          eforms:initialvalue: Choice 1
+          eforms:label: Sector
+          eforms:mandatory: false
+          eforms:values: [premie, geenpremie]
+          first: floep
+      /page1:
+        jcr:primaryType: eforms:page
+        jcr:uuid: f2718bbe-f89d-48e4-b457-63dd4e95eafa
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: geenpremie
+        eforms:label: Page 2
+        /field2:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: 1eea890a-770e-482b-ace2-dc90a019e609
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: id9585854ba11513a8
+          eforms:fieldname: expl
+          eforms:hint: ''
+          eforms:label: We kunnen online geen verzekering aanbieden. Vul je gegevens
+            in zodat we contact kunnen opnemen
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:checkboxes
+          jcr:uuid: 659ee047-9a20-4c02-91b3-82d19e73372c
+          eforms:allowother: false
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:displayvalues: [Choice 1]
+          eforms:fieldid: ida64f2221cd7fd412
+          eforms:fieldname: contactme
+          eforms:hint: field_hint
+          eforms:label: Contact me
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+          eforms:values: [Choice 1]
+        /field0:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: 97de5f11-cacf-4fe6-aee2-162c5fbc60ef
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: idbc8ab8a3bae7f63a
+          eforms:fieldname: email-fail
+          eforms:hint: ''
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validationruleclass: com.onehippo.cms7.eforms.hst.validation.rules.EmailAddressRule
+          eforms:validationruleid: email
+          eforms:validationrulelabel: E-mail Address
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''
+      /page2:
+        jcr:primaryType: eforms:page
+        jcr:uuid: e4721757-411b-4fcd-9729-8ced6c485b9c
+        eforms:conditional: true
+        eforms:conditionfield: zzp_sector_picker
+        eforms:conditionnegate: false
+        eforms:conditionvalue: premie
+        eforms:label: Page 3
+        /field0:
+          jcr:primaryType: eforms:simpletext
+          jcr:uuid: 48f188b7-0e6a-4d3e-8c84-5628c024e3f7
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:expandhint: false
+          eforms:fieldid: ida2ff8584d246d330
+          eforms:fieldname: zzp_amount
+          eforms:hint: ''
+          eforms:label: 'Premie voor de gekozen activiteit: x'
+          eforms:mandatory: false
+        /field1:
+          jcr:primaryType: eforms:textfield
+          jcr:uuid: 47a9c19a-3443-46d7-9f30-39b9928a9481
+          eforms:autocomplete: email
+          eforms:conditional: false
+          eforms:conditionnegate: false
+          eforms:fieldid: ida84fcad100144530
+          eforms:fieldname: email
+          eforms:hint: field_hint
+          eforms:label: E-mailadres
+          eforms:length: 40
+          eforms:mandatory: false
+          eforms:validcasesensitive: 'false'
+          eforms:validexpression: ''

@@ -61,7 +61,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case FIELD_GROUP:
                         FieldGroupBean fieldGroupBean = (FieldGroupBean) abstractFieldBean;
                         FieldGroupBeanResponse fieldGroupBeanResponse = new FieldGroupBeanResponse(
-                                fieldGroupBean.getName(), fieldGroupBean.isMandatory(), fieldGroupBean.getHint(),
+                                fieldGroupBean.getFieldName(), fieldGroupBean.isMandatory(), fieldGroupBean.getHint(),
                                 fieldGroupBean.getAutocomplete(), fieldGroupBean.isExpandHint(),
                                 fieldGroupBean.getLabel(), fieldGroupBean.getValidationRuleId(),
                                 fieldGroupBean.getValidationRuleLabel(), fieldGroupBean.getValidationRuleClass(),
@@ -76,7 +76,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case TEXT_FIELD:
                         TextFieldBean textFieldBean = (TextFieldBean) abstractFieldBean;
                         TextFieldBeanResponse textFieldBeanResponse = new TextFieldBeanResponse(
-                                textFieldBean.getName(), textFieldBean.isMandatory(), textFieldBean.getHint(),
+                                textFieldBean.getFieldName(), textFieldBean.isMandatory(), textFieldBean.getHint(),
                                 textFieldBean.getAutocomplete(), textFieldBean.isExpandHint(),
                                 textFieldBean.getLabel(), textFieldBean.getValidationRuleId(),
                                 textFieldBean.getValidationRuleLabel(), textFieldBean.getValidationRuleClass(),
@@ -91,7 +91,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case SIMPLETEXTFIELD:
                         SimpleTextBean simpleTextBean = (SimpleTextBean) abstractFieldBean;
                         SimpleTextBeanResponse simpleTextBeanResponse = new SimpleTextBeanResponse(
-                                simpleTextBean.getName(), simpleTextBean.isMandatory(), simpleTextBean.getHint(),
+                                simpleTextBean.getFieldName(), simpleTextBean.isMandatory(), simpleTextBean.getHint(),
                                 simpleTextBean.getAutocomplete(), simpleTextBean.isExpandHint(),
                                 simpleTextBean.getLabel(), simpleTextBean.getValidationRuleId(),
                                 simpleTextBean.getValidationRuleLabel(), simpleTextBean.getValidationRuleClass(),
@@ -104,7 +104,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case TEXTAREA:
                         TextAreaBean textAreaBean = (TextAreaBean) abstractFieldBean;
                         TextAreaBeanResponse textAreaBeanResponse = new TextAreaBeanResponse(
-                                textAreaBean.getName(), textAreaBean.isMandatory(), textAreaBean.getHint(),
+                                textAreaBean.getFieldName(), textAreaBean.isMandatory(), textAreaBean.getHint(),
                                 textAreaBean.getAutocomplete(), textAreaBean.isExpandHint(),
                                 textAreaBean.getLabel(), textAreaBean.getValidationRuleId(),
                                 textAreaBean.getValidationRuleLabel(), textAreaBean.getValidationRuleClass(),
@@ -125,7 +125,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                         }
                         
                         SingleSelectBeanResponse singleSelectBeanResponse = new SingleSelectBeanResponse(
-                                singleSelectBean.getName(), singleSelectBean.isMandatory(), singleSelectBean.getHint(),
+                                singleSelectBean.getFieldName(), singleSelectBean.isMandatory(), singleSelectBean.getHint(),
                                 singleSelectBean.getAutocomplete(), singleSelectBean.isExpandHint(),
                                 singleSelectBean.getLabel(), singleSelectBean.getValidationRuleId(),
                                 singleSelectBean.getValidationRuleLabel(), singleSelectBean.getValidationRuleClass(),
@@ -139,7 +139,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case CHECKBOXGROUP:
                         CheckBoxGroupBean checkBoxGroupBean = (CheckBoxGroupBean) abstractFieldBean;
                         CheckBoxGroupBeanResponse checkBoxGroupBeanResponse = new CheckBoxGroupBeanResponse(
-                                checkBoxGroupBean.getName(), checkBoxGroupBean.isMandatory(), checkBoxGroupBean.getHint(),
+                                checkBoxGroupBean.getFieldName(), checkBoxGroupBean.isMandatory(), checkBoxGroupBean.getHint(),
                                 checkBoxGroupBean.getAutocomplete(), checkBoxGroupBean.isExpandHint(),
                                 checkBoxGroupBean.getLabel(), checkBoxGroupBean.getValidationRuleId(),
                                 checkBoxGroupBean.getValidationRuleLabel(), checkBoxGroupBean.getValidationRuleClass(),
@@ -156,7 +156,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case RADIOGROUP:
                         RadioGroupBean radioGroupBean = (RadioGroupBean) abstractFieldBean;
                         RadioGroupBeanResponse radioGroupBeanResponse = new RadioGroupBeanResponse(
-                                radioGroupBean.getName(), radioGroupBean.isMandatory(), radioGroupBean.getHint(),
+                                radioGroupBean.getFieldName(), radioGroupBean.isMandatory(), radioGroupBean.getHint(),
                                 radioGroupBean.getAutocomplete(), radioGroupBean.isExpandHint(),
                                 radioGroupBean.getLabel(), radioGroupBean.getValidationRuleId(),
                                 radioGroupBean.getValidationRuleLabel(), radioGroupBean.getValidationRuleClass(),
@@ -172,7 +172,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case DROPDOWN:
                         DropdownBean dropdownBean = (DropdownBean) abstractFieldBean;
                         DropdownBeanResponse dropdownBeanResponse = new DropdownBeanResponse(
-                                dropdownBean.getName(), dropdownBean.isMandatory(), dropdownBean.getHint(),
+                                dropdownBean.getFieldName(), dropdownBean.isMandatory(), dropdownBean.getHint(),
                                 dropdownBean.getAutocomplete(), dropdownBean.isExpandHint(),
                                 dropdownBean.getLabel(), dropdownBean.getValidationRuleId(),
                                 dropdownBean.getValidationRuleLabel(), dropdownBean.getValidationRuleClass(),
@@ -187,7 +187,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case DATE_FIELD:
                         DateFieldBean dateFieldBean = (DateFieldBean) abstractFieldBean;
                         DateFieldBeanResponse dateFieldBeanResponse = new DateFieldBeanResponse(
-                                dateFieldBean.getName(), dateFieldBean.isMandatory(), dateFieldBean.getHint(),
+                                dateFieldBean.getFieldName(), dateFieldBean.isMandatory(), dateFieldBean.getHint(),
                                 dateFieldBean.getAutocomplete(), dateFieldBean.isExpandHint(),
                                 dateFieldBean.getLabel(), dateFieldBean.getValidationRuleId(),
                                 dateFieldBean.getValidationRuleLabel(), dateFieldBean.getValidationRuleClass(),
@@ -210,7 +210,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                             type = "RADIOBOX";
                         }
                         CommonBeanResponse commonBeanResponse = new CommonBeanResponse(
-                                abstractFieldBean.getName(), abstractFieldBean.isMandatory(), abstractFieldBean.getHint(),
+                                abstractFieldBean.getFieldName(), abstractFieldBean.isMandatory(), abstractFieldBean.getHint(),
                                 abstractFieldBean.getAutocomplete(), abstractFieldBean.isExpandHint(),
                                 abstractFieldBean.getLabel(), abstractFieldBean.getValidationRuleId(),
                                 abstractFieldBean.getValidationRuleLabel(), abstractFieldBean.getValidationRuleClass(),
@@ -223,7 +223,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case LIKERT:
                         LikertBean likertBean = (LikertBean) abstractFieldBean;
                         LikertBeanResponse likertBeanResponse = new LikertBeanResponse(
-                                likertBean.getName(), likertBean.isMandatory(), likertBean.getHint(),
+                                likertBean.getFieldName(), likertBean.isMandatory(), likertBean.getHint(),
                                 likertBean.getAutocomplete(), likertBean.isExpandHint(),
                                 likertBean.getLabel(), likertBean.getValidationRuleId(),
                                 likertBean.getValidationRuleLabel(), likertBean.getValidationRuleClass(),
@@ -237,7 +237,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                     case FILEUPLOAD_FIELD:
                         FileuploadBean fileuploadBean = (FileuploadBean)abstractFieldBean;
                         FileuploadBeanResponse fileuploadBeanResponse = new FileuploadBeanResponse(
-                                fileuploadBean.getName(), fileuploadBean.isMandatory(), fileuploadBean.getHint(),
+                                fileuploadBean.getFieldName(), fileuploadBean.isMandatory(), fileuploadBean.getHint(),
                                 fileuploadBean.getAutocomplete(), fileuploadBean.isExpandHint(),
                                 fileuploadBean.getLabel(), fileuploadBean.getValidationRuleId(),
                                 fileuploadBean.getValidationRuleLabel(), fileuploadBean.getValidationRuleClass(),
@@ -253,7 +253,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                         MultiSelectBean multiSelectBean = (MultiSelectBean) abstractFieldBean;
 
                         MultiSelectBeanResponse multiSelectBeanResponse = new MultiSelectBeanResponse(
-                                multiSelectBean.getName(), multiSelectBean.isMandatory(), multiSelectBean.getHint(),
+                                multiSelectBean.getFieldName(), multiSelectBean.isMandatory(), multiSelectBean.getHint(),
                                 multiSelectBean.getAutocomplete(), multiSelectBean.isExpandHint(),
                                 multiSelectBean.getLabel(), multiSelectBean.getValidationRuleId(),
                                 multiSelectBean.getValidationRuleLabel(), multiSelectBean.getValidationRuleClass(),
@@ -269,7 +269,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                         AntiSpamFieldBean antiSpamFieldBean = (AntiSpamFieldBean) abstractFieldBean;
 
                         AntiSpamFieldBeanResponse antiSpamFieldBeanResponse = new AntiSpamFieldBeanResponse(
-                                antiSpamFieldBean.getName(), antiSpamFieldBean.isMandatory(), antiSpamFieldBean.getHint(),
+                                antiSpamFieldBean.getFieldName(), antiSpamFieldBean.isMandatory(), antiSpamFieldBean.getHint(),
                                 antiSpamFieldBean.getAutocomplete(), antiSpamFieldBean.isExpandHint(),
                                 antiSpamFieldBean.getLabel(), antiSpamFieldBean.getValidationRuleId(),
                                 antiSpamFieldBean.getValidationRuleLabel(), antiSpamFieldBean.getValidationRuleClass(),
