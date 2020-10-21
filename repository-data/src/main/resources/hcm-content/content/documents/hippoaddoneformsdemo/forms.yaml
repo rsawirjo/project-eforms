@@ -3608,13 +3608,13 @@
       hippostd:state: draft
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-20T17:01:36.360+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-21T11:05:51.454+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
       hippotranslation:locale: en
       /emailconfiguration0:
         jcr:primaryType: eforms:formconfiguration
-        jcr:uuid: 08a3f75b-ce0a-4013-82ba-d1a773d5a07a
+        jcr:uuid: 59cd0c34-218b-4c88-bbbb-12caf374b09f
         eforms:addattachments: 'true'
         eforms:mailformdata: ''
         eforms:notificationbccemail: ''
@@ -3626,13 +3626,13 @@
         eforms:notificationtext: ''
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 99ca97dd-a84b-4135-9b7d-9fe87418b166
+        jcr:uuid: 8c225ca3-d0a0-4d2e-885f-06ef40d5215a
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: 55f09b5e-bca3-49a1-b41b-4f19b2734865
+          jcr:uuid: 0e8df808-ceb8-4d47-b559-9ee6552921d8
           eforms:autocomplete: ''
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -3650,7 +3650,7 @@
           first: floep
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: ae26711a-1262-4073-a945-437ba6e60981
+        jcr:uuid: ddf32f92-fc55-4398-800f-08aa3759d959
         eforms:conditional: true
         eforms:conditionfield: zzp_sector_picker
         eforms:conditionnegate: false
@@ -3658,7 +3658,7 @@
         eforms:label: Page 2
         /field2:
           jcr:primaryType: eforms:simpletext
-          jcr:uuid: 7c544c07-452b-4792-92e0-ee7a8d9aac48
+          jcr:uuid: 559a9ad1-74de-4eb4-97ef-39445c4de3a2
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9585854ba11513a8
@@ -3669,11 +3669,12 @@
           eforms:mandatory: false
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: a9bb037e-d845-48fe-a1de-62b8f8850f05
+          jcr:uuid: 5dda036b-2fae-49a9-b124-4775293db938
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
-          eforms:displayvalues: [Choice 1]
+          eforms:displayvalues: [yescontact]
+          eforms:expandhint: false
           eforms:fieldid: ida64f2221cd7fd412
           eforms:fieldname: contactme
           eforms:hint: field_hint
@@ -3682,10 +3683,10 @@
           eforms:mandatory: false
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
-          eforms:values: [Choice 1]
+          eforms:values: [Neem contact op voor een persoonlijk aanbod]
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 59577c73-e000-4199-a64a-35337c1f4d39
+          jcr:uuid: 4a8f0cb7-2dd4-42aa-b4dd-2a4278c8d958
           eforms:autocomplete: email
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -3703,7 +3704,7 @@
           eforms:validexpression: ''
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 141fab16-6a2c-48a8-aacf-00f1ed0a0cc1
+        jcr:uuid: b56dabab-ed5e-48cb-b87b-b5119e689b3c
         eforms:conditional: true
         eforms:conditionfield: zzp_sector_picker
         eforms:conditionnegate: false
@@ -3711,7 +3712,7 @@
         eforms:label: Page 3
         /field0:
           jcr:primaryType: eforms:simpletext
-          jcr:uuid: 1bfc0a20-79c0-4fb9-bf2b-c4e92a699a2d
+          jcr:uuid: 196a0426-f91d-4dbe-ad13-dc8dd3b4292d
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -3722,7 +3723,7 @@
           eforms:mandatory: false
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 0029c4d0-4c27-4e53-9f76-599ddde03bdc
+          jcr:uuid: 0ac679df-579c-4b0c-b19e-4586e6f8728d
           eforms:autocomplete: email
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -3753,13 +3754,13 @@
       hippostd:state: unpublished
       hippostdpubwf:createdBy: admin
       hippostdpubwf:creationDate: 2020-10-16T16:39:14.641+02:00
-      hippostdpubwf:lastModificationDate: 2020-10-20T17:01:48.861+02:00
+      hippostdpubwf:lastModificationDate: 2020-10-21T11:06:34.090+02:00
       hippostdpubwf:lastModifiedBy: admin
       hippotranslation:id: ceaad880-a557-49a3-8343-a084e154f089
       hippotranslation:locale: en
       /emailconfiguration0:
         jcr:primaryType: eforms:formconfiguration
-        jcr:uuid: d41e613f-45de-4afa-a43d-db84f89ffb46
+        jcr:uuid: b7287277-aaa4-4ca2-98fb-85d4055848b0
         eforms:addattachments: 'true'
         eforms:mailformdata: ''
         eforms:notificationbccemail: ''
@@ -3771,13 +3772,13 @@
         eforms:notificationtext: ''
       /page0:
         jcr:primaryType: eforms:page
-        jcr:uuid: 3f5d2b8b-058d-4a98-b2a3-6f7219733475
+        jcr:uuid: eafca862-3714-49bb-9207-43a845a61fcf
         eforms:conditional: false
         eforms:conditionnegate: false
         eforms:label: Page 1
         /field0:
           jcr:primaryType: eforms:dropdown
-          jcr:uuid: 89ba06fe-e7a6-4f5a-910d-348f24e23a15
+          jcr:uuid: 423e0a22-f2b1-414a-9991-e4c4ec2c4e9a
           eforms:autocomplete: ''
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -3795,7 +3796,7 @@
           first: floep
       /page1:
         jcr:primaryType: eforms:page
-        jcr:uuid: e522824a-2f0b-487e-8380-4e92355a8773
+        jcr:uuid: 11f229c6-2f14-402c-91dd-b43d8f40e0c9
         eforms:conditional: true
         eforms:conditionfield: zzp_sector_picker
         eforms:conditionnegate: false
@@ -3803,7 +3804,7 @@
         eforms:label: Page 2
         /field2:
           jcr:primaryType: eforms:simpletext
-          jcr:uuid: a432e414-3d12-4d35-a77e-48aaf7f6dda5
+          jcr:uuid: a02618d7-8345-4abf-81e8-707577a239bd
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:fieldid: id9585854ba11513a8
@@ -3814,11 +3815,12 @@
           eforms:mandatory: false
         /field1:
           jcr:primaryType: eforms:checkboxes
-          jcr:uuid: 7c45e3aa-8a66-4472-8a11-1c77b7800ad5
+          jcr:uuid: 69fa4015-b4a0-4855-b8a1-6bf4ca3af581
           eforms:allowother: false
           eforms:conditional: false
           eforms:conditionnegate: false
-          eforms:displayvalues: [Choice 1]
+          eforms:displayvalues: [yescontact]
+          eforms:expandhint: false
           eforms:fieldid: ida64f2221cd7fd412
           eforms:fieldname: contactme
           eforms:hint: field_hint
@@ -3827,10 +3829,10 @@
           eforms:mandatory: false
           eforms:validcasesensitive: 'false'
           eforms:validexpression: ''
-          eforms:values: [Choice 1]
+          eforms:values: [Neem contact op voor een persoonlijk aanbod]
         /field0:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: fa65ba36-d151-4b8a-a88e-dcde32cf72a8
+          jcr:uuid: 70dd8cd3-dbb1-49ed-afc3-88ba6f42b274
           eforms:autocomplete: email
           eforms:conditional: false
           eforms:conditionnegate: false
@@ -3848,7 +3850,7 @@
           eforms:validexpression: ''
       /page2:
         jcr:primaryType: eforms:page
-        jcr:uuid: 7e9a4a1f-5c4f-4eaa-bc59-d8723271df5a
+        jcr:uuid: 168b4d31-98bd-492e-98b5-968f4200761d
         eforms:conditional: true
         eforms:conditionfield: zzp_sector_picker
         eforms:conditionnegate: false
@@ -3856,7 +3858,7 @@
         eforms:label: Page 3
         /field0:
           jcr:primaryType: eforms:simpletext
-          jcr:uuid: 7459722a-5194-4a1c-b990-97203d0f611d
+          jcr:uuid: f50e88f7-089a-4d02-ba6f-d6a509ccf586
           eforms:conditional: false
           eforms:conditionnegate: false
           eforms:expandhint: false
@@ -3867,7 +3869,7 @@
           eforms:mandatory: false
         /field1:
           jcr:primaryType: eforms:textfield
-          jcr:uuid: 559e4d56-2bef-4b26-ac13-a5fe6fda7bbf
+          jcr:uuid: e0c573eb-a3fd-4af3-886a-1adbc372ea85
           eforms:autocomplete: email
           eforms:conditional: false
           eforms:conditionnegate: false
