@@ -1,41 +1,20 @@
 package com.onehippo.cms7.jaxrs.services;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-
+import com.google.gson.Gson;
+import com.onehippo.cms7.eforms.demo.util.ContextHelper;
+import com.onehippo.cms7.eforms.hst.beans.*;
 import org.apache.commons.lang.StringUtils;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
+import org.hippoecm.hst.content.beans.standard.HippoDocument;
 import org.hippoecm.hst.content.beans.standard.HippoFolderBean;
 import org.hippoecm.hst.core.request.HstRequestContext;
 import org.onehippo.cms7.essentials.components.rest.BaseRestResource;
 
-import com.google.gson.Gson;
-import com.onehippo.cms7.eforms.demo.util.ContextHelper;
-import com.onehippo.cms7.eforms.hst.beans.AbstractFieldBean;
-import com.onehippo.cms7.eforms.hst.beans.AntiSpamFieldBean;
-import com.onehippo.cms7.eforms.hst.beans.CheckBoxBean;
-import com.onehippo.cms7.eforms.hst.beans.CheckBoxGroupBean;
-import com.onehippo.cms7.eforms.hst.beans.DateFieldBean;
-import com.onehippo.cms7.eforms.hst.beans.DropdownBean;
-import com.onehippo.cms7.eforms.hst.beans.FieldGroupBean;
-import com.onehippo.cms7.eforms.hst.beans.FieldType;
-import com.onehippo.cms7.eforms.hst.beans.FileuploadBean;
-import com.onehippo.cms7.eforms.hst.beans.LikertBean;
-import com.onehippo.cms7.eforms.hst.beans.MultiSelectBean;
-import com.onehippo.cms7.eforms.hst.beans.RadioBoxBean;
-import com.onehippo.cms7.eforms.hst.beans.RadioGroupBean;
-import com.onehippo.cms7.eforms.hst.beans.SelectType;
-import com.onehippo.cms7.eforms.hst.beans.SimpleTextBean;
-import com.onehippo.cms7.eforms.hst.beans.SingleSelectBean;
-import com.onehippo.cms7.eforms.hst.beans.TextAreaBean;
-import com.onehippo.cms7.eforms.hst.beans.TextFieldBean;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 
 @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 @Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, MediaType.APPLICATION_FORM_URLENCODED})
@@ -46,14 +25,15 @@ public class EnterpriseFormContentResource extends BaseRestResource {
     @Path("/getAbstractFieldBean/{uuid}")
     @Consumes({"application/json"})
     @Produces({"application/json"})
-    public String getAbstractFieldBean(
+    public String getHippoDocumentBasedUponUuid(
             @PathParam("uuid") String uuid,
             @Context HttpServletRequest servletRequest,
             @Context HttpServletResponse servletResponse) {
-        AbstractFieldBean abstractFieldBean;
+        HippoDocument hippoDocument;
         if (StringUtils.isNotEmpty(uuid)) {
-            abstractFieldBean = getAbstractFieldBean(uuid);
-            if (abstractFieldBean != null) {
+            hippoDocument = getHippoDocumentBasedUponUuid(uuid);
+            if (hippoDocument instanceof AbstractFieldBean ) {
+                AbstractFieldBean abstractFieldBean = (AbstractFieldBean) hippoDocument;
                 Gson gson = new Gson(); 
                 String type = "";
 
@@ -72,6 +52,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 fieldGroupBean.getLabel(), fieldGroupBean.getFieldNamePrefix(),
                                 fieldGroupBean.isOneline(), fieldGroupBean.getFieldBeans()
                         );
+                        fieldGroupBeanResponse.setFieldExtensions(fieldGroupBeanResponse.determineFieldExtensions(fieldGroupBean));
                         return gson.toJson(fieldGroupBeanResponse);
                     case TEXT_FIELD:
                         TextFieldBean textFieldBean = (TextFieldBean) abstractFieldBean;
@@ -87,6 +68,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 textFieldBean.getLength(), textFieldBean.getMinLength(), textFieldBean.getMaxLength(),
                                 textFieldBean.getInitialValue(), "TEXT_FIELD"
                         );
+                        textFieldBeanResponse.setFieldExtensions(textFieldBeanResponse.determineFieldExtensions(textFieldBean));
                         return gson.toJson(textFieldBeanResponse);
                     case SIMPLETEXTFIELD:
                         SimpleTextBean simpleTextBean = (SimpleTextBean) abstractFieldBean;
@@ -100,6 +82,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 simpleTextBean.isConditionNegate(), simpleTextBean.getConditionFieldName(),
                                 simpleTextBean.getConditionFieldValue(), "SIMPLETEXTFIELD"
                         );
+                        simpleTextBeanResponse.setFieldExtensions(simpleTextBeanResponse.determineFieldExtensions(simpleTextBean));
                         return gson.toJson(simpleTextBeanResponse);
                     case TEXTAREA:
                         TextAreaBean textAreaBean = (TextAreaBean) abstractFieldBean;
@@ -115,6 +98,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 textAreaBean.getRows(), textAreaBean.getCols(), textAreaBean.getMinLength(),
                                 textAreaBean.getMaxLength(), "TEXTAREA"
                         );
+                        textAreaBeanResponse.setFieldExtensions(textAreaBeanResponse.determineFieldExtensions(textAreaBean));
                         return gson.toJson(textAreaBeanResponse);
                     case SELECT:
                         SingleSelectBean singleSelectBean = (SingleSelectBean) abstractFieldBean;
@@ -135,6 +119,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 singleSelectBean.getConditionFieldValue(),
                                 singleSelectBean.getValue(), singleSelectBean.getText(), type
                         );
+                        singleSelectBeanResponse.setFieldExtensions(singleSelectBeanResponse.determineFieldExtensions(singleSelectBean));
                         return gson.toJson(singleSelectBeanResponse);
                     case CHECKBOXGROUP:
                         CheckBoxGroupBean checkBoxGroupBean = (CheckBoxGroupBean) abstractFieldBean;
@@ -152,6 +137,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 checkBoxGroupBean.getAllowOther(),
                                 "CHECKBOXGROUP"
                         );
+                        checkBoxGroupBeanResponse.setFieldExtensions(checkBoxGroupBeanResponse.determineFieldExtensions(checkBoxGroupBean));
                         return gson.toJson(checkBoxGroupBeanResponse);
                     case RADIOGROUP:
                         RadioGroupBean radioGroupBean = (RadioGroupBean) abstractFieldBean;
@@ -168,6 +154,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 radioGroupBean.getLength(), radioGroupBean.getLength(), radioGroupBean.getAllowOther(),
                                 "RADIOGROUP"
                         );
+                        radioGroupBeanResponse.setFieldExtensions(radioGroupBeanResponse.determineFieldExtensions(radioGroupBean));
                         return gson.toJson(radioGroupBeanResponse);
                     case DROPDOWN:
                         DropdownBean dropdownBean = (DropdownBean) abstractFieldBean;
@@ -183,6 +170,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 dropdownBean.getValues(), dropdownBean.getDisplayValues(), dropdownBean.getInitialValueOption(),
                                 dropdownBean.getInitialValue(), dropdownBean.getInitialText(), "DROPDOWN"
                         );
+                        dropdownBeanResponse.setFieldExtensions(dropdownBeanResponse.determineFieldExtensions(dropdownBean));
                         return gson.toJson(dropdownBeanResponse);
                     case DATE_FIELD:
                         DateFieldBean dateFieldBean = (DateFieldBean) abstractFieldBean;
@@ -200,6 +188,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 dateFieldBean.getInitialValueDayOffset(), dateFieldBean.isInitialValueRuleMode(),
                                 dateFieldBean.getInitialValueRule(), "DATE_FIELD"
                         );
+                        dateFieldBeanResponse.setFieldExtensions(dateFieldBeanResponse.determineFieldExtensions(dateFieldBean));
                         return gson.toJson(dateFieldBeanResponse);
                     case CHECKBOX:
                     case RADIOBOX:
@@ -219,6 +208,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 abstractFieldBean.isConditionNegate(), abstractFieldBean.getConditionFieldName(),
                                 abstractFieldBean.getConditionFieldValue(), type
                         );
+                        commonBeanResponse.setFieldExtensions(commonBeanResponse.determineFieldExtensions(abstractFieldBean));
                         return gson.toJson(commonBeanResponse);
                     case LIKERT:
                         LikertBean likertBean = (LikertBean) abstractFieldBean;
@@ -233,6 +223,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 likertBean.getConditionFieldValue(),
                                 likertBean.getOptions(), likertBean.getQuestions(), "LIKERT"
                         );
+                        likertBeanResponse.setFieldExtensions(likertBeanResponse.determineFieldExtensions(likertBean));
                         return gson.toJson(likertBeanResponse);
                     case FILEUPLOAD_FIELD:
                         FileuploadBean fileuploadBean = (FileuploadBean)abstractFieldBean;
@@ -248,6 +239,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 fileuploadBean.getMaxUploadSize(), fileuploadBean.getLength(), fileuploadBean.getFileExtensions(),
                                 "FILEUPLOAD_FIELD"
                         );
+                        fileuploadBeanResponse.setFieldExtensions(fileuploadBeanResponse.determineFieldExtensions(fileuploadBean));
                         return gson.toJson(fileuploadBeanResponse);
                     case MULTISELECT_BEAN:
                         MultiSelectBean multiSelectBean = (MultiSelectBean) abstractFieldBean;
@@ -264,6 +256,7 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 multiSelectBean.getSelectType(), multiSelectBean.getValue(), multiSelectBean.getText(),
                                 "MULTISELECT_BEAN"
                         );
+                        multiSelectBeanResponse.setFieldExtensions(multiSelectBeanResponse.determineFieldExtensions(multiSelectBean));
                         return gson.toJson(multiSelectBeanResponse);
                     case ANTISPAM:
                         AntiSpamFieldBean antiSpamFieldBean = (AntiSpamFieldBean) abstractFieldBean;
@@ -278,16 +271,40 @@ public class EnterpriseFormContentResource extends BaseRestResource {
                                 antiSpamFieldBean.isConditionNegate(), antiSpamFieldBean.getConditionFieldName(),
                                 antiSpamFieldBean.getConditionFieldValue(), antiSpamFieldBean.getAntiSpamType(), "ANTISPAM"
                         );
+                        antiSpamFieldBeanResponse.setFieldExtensions(antiSpamFieldBeanResponse.determineFieldExtensions(antiSpamFieldBean));
                         return gson.toJson(antiSpamFieldBeanResponse);
                     default:
-                        return "not found";
-                }
+                 }
+            }
+            if (hippoDocument instanceof FormBean) {
+                FormBean formBean = (FormBean) hippoDocument;
+                FormBeanResponse formBeanResponse = new FormBeanResponse(
+                        formBean.getAction(), formBean.getActionUrl(), formBean.getEmail(), formBean.getCcEmail(),
+                        formBean.getBccEmail(), formBean.getFormConfigurationBeans(), formBean.getPageBeans(),
+                        formBean.getFormName(), formBean.getFormClass(), formBean.getButtonLabel(), formBean.getNextButtonLabel(),
+                        formBean.getPreviousButtonLabel()
+                );
+                Gson gson = new Gson();
+                formBeanResponse.setFieldExtensions(formBeanResponse.determineFieldExtensions(formBean));
+                return gson.toJson(formBeanResponse);
+            }
+            if (hippoDocument instanceof PageBean) {
+                PageBean pageBean = (PageBean) hippoDocument;
+                PageBeanResponse pageBeanResponse = new PageBeanResponse(
+                        pageBean.getLabel(), pageBean.isConditional(), pageBean.isConditionNegate(),
+                        pageBean.getConditionFieldName(), pageBean.getConditionFieldValue(),
+                        pageBean.getValidationRuleId(), pageBean.getValidationRuleLabel(),
+                        pageBean.getValidationRuleClass(), pageBean.getFieldBeans()
+                );
+                Gson gson = new Gson();
+                pageBeanResponse.setFieldExtensions(pageBeanResponse.determineFieldExtensions(pageBean));
+                return gson.toJson(pageBeanResponse);
             }
         }
         return "not found";
     }
 
-    private AbstractFieldBean getAbstractFieldBean(final String uuidValue) {
+    private HippoDocument getHippoDocumentBasedUponUuid(final String uuidValue) {
         ContextHelper contextHelper = new ContextHelper();
         HstRequestContext hstRequestContext = contextHelper.getRequestContext();
         HippoBean scope = hstRequestContext.getSiteContentBaseBean();
@@ -295,6 +312,10 @@ public class EnterpriseFormContentResource extends BaseRestResource {
         HippoBean hippoBean = formsFolder.getBeanByUUID(uuidValue, HippoBean.class);
         if (hippoBean instanceof AbstractFieldBean) {
             return (AbstractFieldBean) hippoBean;
+        } else if (hippoBean instanceof FormBean) {
+            return (FormBean) hippoBean;
+        } else if (hippoBean instanceof PageBean) {
+            return (PageBean) hippoBean;
         }
         return null;
     }

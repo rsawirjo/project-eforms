@@ -1,8 +1,10 @@
 package com.onehippo.cms7.jaxrs.services;
 
-import org.hippoecm.hst.content.beans.standard.HippoDocument;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-public abstract class AbstractFieldBeanResponse extends HippoDocument {
+public abstract class AbstractFieldBeanResponse extends AbstractResponse{
+    private static Logger log = LoggerFactory.getLogger(AbstractFieldBeanResponse.class);
     private String fieldName;
     private boolean mandatory;
     private String hint;
@@ -21,7 +23,6 @@ public abstract class AbstractFieldBeanResponse extends HippoDocument {
     private String conditionField;
     private String conditionValue;
     private String type;
-
 
     public AbstractFieldBeanResponse(final String fieldName, final boolean mandatory,
                                      final String hint, final String autocomplete,

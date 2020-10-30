@@ -1,18 +1,12 @@
-/*
- * Copyright 2012-2020 Hippo B.V. (http://www.onehippo.com)
- */
 package com.onehippo.cms7.eforms.demo.behavior;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-
-import javax.jcr.Session;
-
+import com.onehippo.cms7.eforms.demo.beans.SbiCodeMap;
+import com.onehippo.cms7.eforms.demo.beans.SbiCodeRow;
+import com.onehippo.cms7.eforms.demo.util.ContextHelper;
+import com.onehippo.cms7.eforms.hst.beans.FormBean;
+import com.onehippo.cms7.eforms.hst.behaviors.StoreFormDataBehavior;
+import com.onehippo.cms7.eforms.hst.model.Form;
+import com.opencsv.bean.CsvToBeanBuilder;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
@@ -32,13 +26,10 @@ import org.onehippo.repository.documentworkflow.DocumentWorkflow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.onehippo.cms7.eforms.demo.beans.SbiCodeMap;
-import com.onehippo.cms7.eforms.demo.beans.SbiCodeRow;
-import com.onehippo.cms7.eforms.demo.util.ContextHelper;
-import com.onehippo.cms7.eforms.hst.beans.FormBean;
-import com.onehippo.cms7.eforms.hst.behaviors.StoreFormDataBehavior;
-import com.onehippo.cms7.eforms.hst.model.Form;
-import com.opencsv.bean.CsvToBeanBuilder;
+import javax.jcr.Session;
+import java.io.*;
+import java.util.List;
+import java.util.Map;
 
 /**
  * This behavior stores a csv file which has been uploaded into tmp folder, from than on it is converted into

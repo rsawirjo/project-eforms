@@ -1,12 +1,11 @@
 package com.onehippo.cms7.jaxrs.services;
 
-import java.util.List;
-
+import com.onehippo.cms7.eforms.hst.beans.FormConfigurationBean;
+import com.onehippo.cms7.eforms.hst.beans.PageBean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.onehippo.cms7.eforms.hst.beans.FormConfigurationBean;
-import com.onehippo.cms7.eforms.hst.beans.PageBean;
+import java.util.List;
 
 /**
  * [eforms:form] > hippostd:publishable, hippostd:publishableSummary, hippo:document orderable
@@ -20,7 +19,7 @@ import com.onehippo.cms7.eforms.hst.beans.PageBean;
  * // to hold all the 'free defined properties' which can be used by the custom field classes.
  * - * (string)
  */
-public class FormBeanResponse{
+public class FormBeanResponse extends AbstractResponse{
     private String action;
     private String actionUrl;
     private String email;
